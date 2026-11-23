@@ -1,0 +1,103 @@
+- generic [active] [ref=f3e1]:
+  - navigation [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - link "Your Safe Place Your Safe Place" [ref=f3e4] [cursor=pointer]:
+        - /url: "#"
+        - img "Your Safe Place" [ref=f3e5]
+        - generic [ref=f3e6]: Your Safe Place
+      - button "Menú" [ref=f3e7] [cursor=pointer]
+  - generic [ref=f3e13]:
+    - generic [ref=f3e14]:
+      - paragraph [ref=f3e15]: Psicóloga Clínica · Lima, Perú
+      - heading "Tu espacio seguro para sanar" [level=1] [ref=f3e16]
+      - paragraph [ref=f3e17]: Soy Fátima Escudero. Te acompaño en un proceso terapéutico basado en evidencia, con calidez humana y sin juicios. Presencial en Lima o virtual desde cualquier lugar.
+      - link "Solicitar Cita" [ref=f3e18] [cursor=pointer]:
+        - /url: "#booking"
+    - img "Psicóloga Fátima Escudero" [ref=f3e21]
+  - generic [ref=f3e24]:
+    - img "Psic. Fátima Escudero" [ref=f3e26]
+    - generic [ref=f3e27]:
+      - paragraph [ref=f3e28]: Conóceme
+      - heading "Psic. Fátima Escudero" [level=2] [ref=f3e29]
+      - paragraph [ref=f3e30]: Psicóloga Clínica · Terapia Cognitivo-Conductual (TCC) · Terapia de Pareja y Familia
+      - paragraph [ref=f3e31]: Con formación especializada en Psicología Clínica y Terapia Cognitivo-Conductual, me dedico a ofrecer un espacio terapéutico seguro y confidencial. Mi consulta se encuentra en el límite de San Isidro, San Borja y La Victoria, Lima. También atiendo de forma virtual a pacientes de cualquier parte del mundo.
+      - heading "Áreas de Atención" [level=3] [ref=f3e32]
+      - generic [ref=f3e33]:
+        - generic [ref=f3e34]: Trastorno Límite de la Personalidad (TLP)
+        - generic [ref=f3e35]: Ansiedad · Depresión · Bipolaridad
+        - generic [ref=f3e36]: Desregulación y dependencia emocional
+        - generic [ref=f3e37]: Trauma psicológico y estrés postraumático
+        - generic [ref=f3e38]: Secuelas de abuso psicológico y trauma relacional
+        - generic [ref=f3e39]: Dificultades de pareja y familiares
+        - generic [ref=f3e40]: Conductas adictivas y límites afectivos
+  - generic [ref=f3e42]:
+    - generic [ref=f3e43]:
+      - paragraph [ref=f3e44]: Servicios y Tarifas
+      - heading "Elige el tipo de terapia" [level=2] [ref=f3e45]
+      - paragraph [ref=f3e46]: Todas las sesiones tienen una duración de 60 minutos. Puedes elegir la modalidad presencial o virtual.
+    - generic [ref=f3e47]:
+      - generic [ref=f3e48]:
+        - generic [ref=f3e49]: 🧠
+        - heading "Terapia Individual" [level=3] [ref=f3e50]
+        - generic [ref=f3e51]: S/. 150.00
+        - paragraph [ref=f3e52]: Sesión de 60 minutos · Presencial o Virtual
+        - paragraph [ref=f3e53]: Espacio clínico personalizado enfocado en tu bienestar integral y salud mental.
+      - generic [ref=f3e54]:
+        - generic [ref=f3e55]: 💑
+        - heading "Terapia de Pareja" [level=3] [ref=f3e56]
+        - generic [ref=f3e57]: S/. 180.00
+        - paragraph [ref=f3e58]: Sesión de 60 minutos · Presencial o Virtual
+        - paragraph [ref=f3e59]: Orientación relacional para fortalecer la comunicación y resolver conflictos afectivos.
+      - generic [ref=f3e60]:
+        - generic [ref=f3e61]: 📦
+        - heading "Pack 4 Sesiones Individuales" [level=3] [ref=f3e62]
+        - generic [ref=f3e63]: S/. 500.00
+        - paragraph [ref=f3e64]: 4 sesiones de 60 min · Presencial o Virtual
+        - paragraph [ref=f3e65]: Programa intensivo de 4 sesiones terapéuticas con seguimiento estructurado.
+        - generic [ref=f3e66]: Ahorras S/. 100.00
+  - generic [ref=f3e68]:
+    - generic [ref=f3e69]:
+      - paragraph [ref=f3e70]: Agendar Cita
+      - heading "Reserva tu sesión" [level=2] [ref=f3e71]
+    - generic [ref=f3e72]:
+      - generic [ref=f3e73]:
+        - generic [ref=f3e74]: "1"
+        - generic [ref=f3e76]: "2"
+        - generic [ref=f3e78]: "3"
+        - generic [ref=f3e80]: "4"
+      - generic [ref=f3e83]:
+        - heading "Selecciona el servicio" [level=3] [ref=f3e84]
+        - generic [ref=f3e85]:
+          - generic [ref=f3e86] [cursor=pointer]:
+            - generic [ref=f3e87]: 🧠
+            - heading "Terapia Individual" [level=4] [ref=f3e88]
+            - generic [ref=f3e89]: S/. 150.00
+          - generic [ref=f3e90] [cursor=pointer]:
+            - generic [ref=f3e91]: 💑
+            - heading "Terapia de Pareja" [level=4] [ref=f3e92]
+            - generic [ref=f3e93]: S/. 180.00
+          - generic [ref=f3e94] [cursor=pointer]:
+            - generic [ref=f3e95]: 📦
+            - heading "Pack 4 Sesiones Individuales" [level=4] [ref=f3e96]
+            - generic [ref=f3e97]: S/. 500.00
+        - heading "Modalidad" [level=3] [ref=f3e98]
+        - generic [ref=f3e99]:
+          - generic [ref=f3e100] [cursor=pointer]: 📍 Presencial
+          - generic [ref=f3e101] [cursor=pointer]: 💻 Virtual
+      - button "Siguiente →" [ref=f3e103] [cursor=pointer]
+  - contentinfo [ref=f3e104]:
+    - generic [ref=f3e105]:
+      - generic [ref=f3e106]:
+        - generic [ref=f3e107]:
+          - heading "Your Safe Place" [level=4] [ref=f3e108]
+          - paragraph [ref=f3e109]: Consultorio psicológico de la Psic. Fátima Escudero. Atención clínica especializada en Lima, Perú.
+        - generic [ref=f3e110]:
+          - heading "Contacto" [level=4] [ref=f3e111]
+          - paragraph [ref=f3e112]: 📱 +51 924 368 333
+          - paragraph [ref=f3e113]: 📧 contacto@yoursafeplace.pe
+          - paragraph [ref=f3e114]: 📍 Lima, Perú · San Isidro / San Borja
+        - generic [ref=f3e115]:
+          - heading "Horario de Atención" [level=4] [ref=f3e116]
+          - paragraph [ref=f3e117]: "Lunes a Viernes: 10:00 AM – 8:00 PM"
+          - paragraph [ref=f3e118]: "Sábados y Domingos: Cerrado"
+      - paragraph [ref=f3e120]: © 2026 Your Safe Place · Psic. Fátima Escudero · Todos los derechos reservados
