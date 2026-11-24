@@ -1,5 +1,5 @@
 /* ============================================================
-   YOUR SAFE PLACE — Application Logic (Clinical System)
+   YOUR SAFE PLACE — Unified Application Logic (Clinical System)
    Psic. Fátima Escudero · Lima, Perú
    ============================================================ */
 
@@ -11,18 +11,14 @@ const I18N = {
   strings: {
     es: {
       nav_about: 'Sobre Mí',
-      nav_services: 'Servicios',
       nav_booking: 'Agendar Cita',
       hero_label: 'Psicóloga Clínica · Lima, Perú',
       hero_title: 'Tu espacio seguro para ',
       hero_highlight: 'sanar',
-      hero_desc: 'Soy Fátima Escudero. Te acompaño en un proceso terapéutico basado en evidencia, con calidez humana y sin juicios. Presencial en Lima o virtual desde cualquier lugar.',
-      hero_cta: 'Solicitar Cita',
-      bio_label: 'Conóceme',
-      bio_name: 'Psic. Fátima Escudero',
-      bio_title: 'Psicóloga Clínica · Terapia Cognitivo-Conductual (TCC) · Terapia de Pareja y Familia',
-      bio_desc: 'Con formación especializada en Psicología Clínica y Terapia Cognitivo-Conductual, me dedico a ofrecer un espacio terapéutico seguro y confidencial. Mi consulta se encuentra en el límite de San Isidro, San Borja y La Victoria, Lima. También atiendo de forma virtual a pacientes de cualquier parte del mundo.',
-      bio_areas_title: 'Áreas de Atención',
+      pres_subtitle: 'Psic. Fátima Escudero · Especialista en TCC, Terapia de Pareja y Familia',
+      pres_bio: 'Te acompaño en un proceso terapéutico basado en evidencia, con calidez humana y sin juicios. Consultorio privado en el límite de San Isidro, San Borja y La Victoria, Lima, o modalidad virtual por videollamada para todo el Perú y el extranjero.',
+      pres_services_summary: '💡 <strong>Servicios disponibles:</strong> Sesiones de 60 minutos individuales (S/. 150) y de pareja (S/. 180), además de packs terapéuticos individuales con tarifa reducida.',
+      hero_cta: '📅 Agendar mi Cita',
       bio_areas: [
         'Trastorno Límite de la Personalidad (TLP)',
         'Ansiedad · Depresión · Bipolaridad',
@@ -32,94 +28,80 @@ const I18N = {
         'Dificultades de pareja y familiares',
         'Conductas adictivas y límites afectivos'
       ],
-      srv_label: 'Servicios y Tarifas',
-      srv_title: 'Elige el tipo de terapia',
-      srv_desc: 'Todas las sesiones tienen una duración de 60 minutos. Puedes elegir la modalidad presencial o virtual.',
-      bk_label: 'Agendar Cita',
-      bk_title: 'Reserva tu sesión',
-      wz_step1: 'Servicio',
-      wz_step2: 'Fecha y Hora',
-      wz_step3: 'Tus Datos',
-      wz_step4: 'Confirmar',
-      wz_prev: '← Anterior',
-      wz_next: 'Siguiente →',
-      wz_submit: 'Solicitar Cita & Enviar Comprobante',
-      s1_title: 'Selecciona el servicio',
-      s1_modality: 'Modalidad',
-      s1_presencial: 'Presencial',
-      s1_virtual: 'Virtual',
-      s2_select_time: 'Selecciona un horario',
-      s2_no_date: 'Selecciona una fecha en el calendario',
-      s2_closed: 'Cerrado',
-      s2_unavailable: '⏱️ Cerrado (No disponible)',
-      s3_title: 'Ingresa tus datos',
-      s3_name: 'Nombres y Apellidos',
-      s3_dni: 'DNI / Documento',
-      s3_whatsapp: 'WhatsApp',
-      s3_email: 'Correo Electrónico',
-      s3_reason: 'Motivo de consulta (confidencial)',
-      s3_voucher: 'Comprobante de pago',
-      s3_upload_text: 'Haz clic o arrastra tu comprobante aquí',
-      err_name: 'Solo letras, tildes y espacios (mínimo 3 caracteres).',
-      err_dni: 'Solo dígitos numéricos (8 a 10 dígitos).',
-      err_whatsapp: 'Solo dígitos numéricos (9 a 12 dígitos).',
+      s1_header_title: 'Modalidad y Selección de Terapia',
+      s1_presencial_title: 'Presencial en Consultorio',
+      s1_presencial_badge: 'Lima',
+      s1_presencial_desc: 'Consultorio privado en el Límite San Isidro, San Borja & La Victoria.',
+      s1_virtual_title: 'Virtual por Videollamada',
+      s1_virtual_badge: 'Meet / Zoom',
+      s1_virtual_desc: 'Sesión online para Lima, provincias de Perú y pacientes en el extranjero.',
+      s1_therapy_subheading: 'Selecciona la Terapia o Paquete:',
+      s2_header_title: 'Fecha y Horario de la Sesión',
+      leg_disp: 'Disponible',
+      leg_ocup: 'Ocupado',
+      leg_cerr: 'Cerrado',
+      cal_note: '* Atención de Lunes a Viernes. Fines de semana y fechas pasadas no están disponibles.',
+      slots_lbl: 'HORARIOS DISPONIBLES (60 MIN)',
+      slots_placeholder: 'Haz clic en un día del calendario a la izquierda para ver los horarios disponibles.',
+      s3_header_title: 'Datos de Contacto del Paciente',
+      fld_name: 'Nombres y Apellidos',
+      hint_name: 'Solo letras y espacios (sin números ni caracteres especiales)',
+      err_name: 'Ingresa un nombre válido (mínimo 3 letras).',
+      fld_dni: 'DNI / Documento de Identidad',
+      hint_dni: 'Solo números (máximo 10 dígitos)',
+      err_dni: 'Ingresa entre 8 y 10 dígitos numéricos.',
+      fld_wa: 'WhatsApp de Contacto',
+      hint_wa: 'Solo números',
+      err_wa: 'Ingresa un número de WhatsApp válido (9 a 12 dígitos).',
+      fld_email: 'Correo Electrónico',
+      hint_email: 'Alfanumérico seguro (@ y .)',
       err_email: 'Ingresa un correo electrónico válido.',
-      s4_title: 'Resumen de tu solicitud',
+      fld_reason: 'Motivo de consulta (Breve y confidencial)',
+      s4_header_title: 'Información de Abono y Confirmación',
+      inv_label: 'INVERSIÓN POR SESIÓN TERAPÉUTICA',
+      acc_title: '💳 Cuentas de pago autorizadas para sesión terapéutica:',
+      vch_title: '📎 Adjuntar Fotografía o Captura del Pago *',
+      vch_desc: 'Sube el comprobante de abono para que Fátima lo verifique y valide tu cita.',
+      btn_upload: 'Seleccionar archivo de pago',
+      vch_empty: 'Sin adjuntar',
+      btn_submit_wa: 'Solicitar Cita & Enviar Comprobante por WhatsApp',
+      wa_disclaimer: '* Para habilitar el envío, debes adjuntar primero la foto o captura de tu comprobante de abono arriba.<br>Atención estrictamente confidencial bajo secreto profesional.',
       ft_desc: 'Consultorio psicológico de la Psic. Fátima Escudero. Atención clínica especializada en Lima, Perú.',
       ft_contact: 'Contacto',
-      ft_location: 'Lima, Perú · San Isidro / San Borja',
+      ft_location: 'Lima, Perú · Límite San Isidro, San Borja & La Victoria',
       ft_hours: 'Horario de Atención',
       ft_schedule: 'Lunes a Viernes: 10:00 AM – 8:00 PM',
       ft_weekend: 'Sábados y Domingos: Cerrado',
       ft_rights: 'Todos los derechos reservados',
       modal_title: '🌿 ¡Solicitud Generada!',
       modal_desc: 'Tu código de solicitud es:',
-      modal_inst: 'Al hacer clic se abrirá WhatsApp con tu solicitud pre-llenada. Adjunta la captura de tu comprobante en el chat.',
+      modal_inst: 'Al hacer clic se abrirá WhatsApp con los detalles de tu solicitud. Adjunta la captura de tu comprobante en el chat para que Fátima confirme tu cita.',
       modal_wa_btn: 'Abrir WhatsApp y Enviar',
       modal_close: 'Cerrar',
-      services: [
-        { id: 'individual', icon: '🧠', name: 'Terapia Individual', price: 150.00, currency: 'S/.', period: 'Sesión de 60 minutos · Presencial o Virtual', desc: 'Espacio clínico personalizado enfocado en tu bienestar integral y salud mental.' },
-        { id: 'pareja', icon: '💑', name: 'Terapia de Pareja', price: 180.00, currency: 'S/.', period: 'Sesión de 60 minutos · Presencial o Virtual', desc: 'Orientación relacional para fortalecer la comunicación y resolver conflictos afectivos.' },
-        { id: 'pack4', icon: '📦', name: 'Pack 4 Sesiones Individuales', price: 500.00, currency: 'S/.', period: '4 sesiones de 60 min · Presencial o Virtual', desc: 'Programa intensivo de 4 sesiones terapéuticas con seguimiento estructurado.', save: 'Ahorras S/. 100.00' }
-      ],
-      payment_title: '💳 Cuentas Bancarias Autorizadas',
-      payment_methods: [
-        { name: 'Yape / Plin', detail: '+51 924 368 333' },
-        { name: 'BCP Soles', detail: 'Cuenta: 19473121367065 | CCI: 00219417312136706595' },
-        { name: 'BBVA Soles', detail: 'Cuenta: 0011-0814-0237429708 | CCI: 01181400023742970819' }
-      ],
-      days_short: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+      days_short: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
       months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
       days_full: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-      summary_patient: 'Paciente',
-      summary_dni: 'DNI / Documento',
-      summary_wa: 'WhatsApp',
-      summary_email: 'Correo',
-      summary_service: 'Servicio',
-      summary_modality: 'Modalidad',
-      summary_date: 'Fecha y Hora',
-      summary_reason: 'Motivo',
-      summary_total: 'INVERSIÓN TOTAL',
-      summary_payment: 'Cuenta autorizada',
-      summary_voucher: 'Comprobante',
-      pack_session: 'Sesión',
-      pack_ready: '✓ Lista',
-      pack_pending: 'Pendiente'
+      services: [
+        { id: 'individual', name: 'Terapia Individual', price: 150.00, currency: 'S/.', period: 'Sesión de 60 minutos' },
+        { id: 'pareja', name: 'Terapia de Pareja', price: 180.00, currency: 'S/.', period: 'Sesión de 60 minutos' },
+        { id: 'pack4', name: 'Pack 4 Sesiones Individuales', price: 500.00, currency: 'S/.', period: '4 sesiones de 60 min (Ahorro S/. 100)', warm: true }
+      ],
+      payment_methods: [
+        { name: 'Yape / Plin', badge: 'Móvil', number: '+51 924 368 333', extra: 'Titular: Fátima Escudero' },
+        { name: 'BCP Soles', badge: 'Ahorros', number: '19473121367065', extra: 'CCI: 00219417312136706595' },
+        { name: 'BBVA Soles', badge: 'Independencia', number: '0011-0814-0237429708', extra: 'CCI: 01181400023742970819' }
+      ]
     },
     en: {
       nav_about: 'About Me',
-      nav_services: 'Services',
       nav_booking: 'Book Session',
       hero_label: 'Clinical Psychologist · Lima, Peru',
       hero_title: 'Your safe place to ',
       hero_highlight: 'heal',
-      hero_desc: "I'm Fátima Escudero. I accompany you in an evidence-based therapeutic journey, with human warmth and zero judgment. In-person in Lima or online worldwide.",
-      hero_cta: 'Book a Session',
-      bio_label: 'About Me',
-      bio_name: 'Psic. Fátima Escudero',
-      bio_title: 'Clinical Psychologist · Cognitive Behavioral Therapy (CBT) · Couples & Family Therapy',
-      bio_desc: 'With specialized training in Clinical Psychology and CBT, I provide a confidential, safe therapeutic environment. My clinic is located at the border of San Isidro, San Borja, and La Victoria, Lima. Online sessions are also available worldwide.',
-      bio_areas_title: 'Clinical Focus Areas',
+      pres_subtitle: 'Psic. Fátima Escudero · Specialist in CBT, Couples & Family Therapy',
+      pres_bio: 'Evidence-based therapeutic support delivered with empathy and zero judgment. In-person clinic at the border of San Isidro, San Borja, and La Victoria, Lima, or online video sessions worldwide.',
+      pres_services_summary: '💡 <strong>Available Services:</strong> 60-minute individual ($60 USD) and couples ($80 USD) psychotherapy sessions.',
+      hero_cta: '📅 Book My Session',
       bio_areas: [
         'Borderline Personality Disorder (BPD)',
         'Anxiety · Depression · Bipolarity',
@@ -129,76 +111,66 @@ const I18N = {
         'Couples & family relationship difficulties',
         'Addictive behaviors & affective boundaries'
       ],
-      srv_label: 'Services & Rates',
-      srv_title: 'Select your therapy',
-      srv_desc: 'All sessions last 60 minutes. Choose between online or in-person mode.',
-      bk_label: 'Schedule Appointment',
-      bk_title: 'Book your session',
-      wz_step1: 'Service',
-      wz_step2: 'Date & Time',
-      wz_step3: 'Your Info',
-      wz_step4: 'Confirm',
-      wz_prev: '← Previous',
-      wz_next: 'Next →',
-      wz_submit: 'Request Appointment & Send Receipt',
-      s1_title: 'Choose therapy type',
-      s1_modality: 'Session Mode',
-      s1_presencial: 'In-person',
-      s1_virtual: 'Online',
-      s2_select_time: 'Select a time slot',
-      s2_no_date: 'Select a date on the calendar',
-      s2_closed: 'Closed',
-      s2_unavailable: '⏱️ Closed (Unavailable)',
-      s3_title: 'Personal information',
-      s3_name: 'Full Name',
-      s3_dni: 'ID / Passport',
-      s3_whatsapp: 'WhatsApp',
-      s3_email: 'Email Address',
-      s3_reason: 'Reason for consultation (confidential)',
-      s3_voucher: 'Payment Receipt',
-      s3_upload_text: 'Click or drag your payment receipt here',
-      err_name: 'Letters and spaces only (minimum 3 characters).',
-      err_dni: 'Digits only (8 to 10 digits).',
-      err_whatsapp: 'Digits only (9 to 12 digits).',
+      s1_header_title: 'Session Mode & Therapy Selection',
+      s1_presencial_title: 'In-person at Clinic',
+      s1_presencial_badge: 'Lima',
+      s1_presencial_desc: 'Private clinic at the border of San Isidro, San Borja & La Victoria.',
+      s1_virtual_title: 'Online Video Session',
+      s1_virtual_badge: 'Meet / Zoom',
+      s1_virtual_desc: 'Online video consultation for Lima, Peru provinces, and international patients.',
+      s1_therapy_subheading: 'Select Therapy Service:',
+      s2_header_title: 'Date and Time Slot',
+      leg_disp: 'Available',
+      leg_ocup: 'Booked',
+      leg_cerr: 'Closed',
+      cal_note: '* Monday to Friday office hours. Weekends and past dates are unavailable.',
+      slots_lbl: 'AVAILABLE SLOTS (60 MIN)',
+      slots_placeholder: 'Click a date on the calendar to see available time slots.',
+      s3_header_title: 'Patient Contact Details',
+      fld_name: 'Full Name',
+      hint_name: 'Letters and spaces only (minimum 3 letters)',
+      err_name: 'Enter a valid full name.',
+      fld_dni: 'ID / Passport Number',
+      hint_dni: 'Digits only (8 to 10 digits)',
+      err_dni: 'Enter between 8 and 10 digits.',
+      fld_wa: 'WhatsApp Phone Number',
+      hint_wa: 'Digits only',
+      err_wa: 'Enter a valid WhatsApp number (9 to 12 digits).',
+      fld_email: 'Email Address',
+      hint_email: 'Standard alphanumeric email (@ and .)',
       err_email: 'Enter a valid email address.',
-      s4_title: 'Request summary',
-      ft_desc: 'Private clinical practice of Psic. Fátima Escudero. Specialized mental healthcare in Lima, Peru.',
+      fld_reason: 'Reason for consultation (Brief & confidential)',
+      s4_header_title: 'Payment Details & Confirmation',
+      inv_label: 'SESSION INVESTMENT',
+      acc_title: '💳 Authorized international payment method:',
+      vch_title: '📎 Attach Payment Screenshot or Receipt *',
+      vch_desc: 'Upload your payment receipt so Fátima can verify and validate your booking.',
+      btn_upload: 'Select payment file',
+      vch_empty: 'No file attached',
+      btn_submit_wa: 'Request Appointment & Send Receipt via WhatsApp',
+      wa_disclaimer: '* To enable booking, attach your payment screenshot above first.<br>Strictly confidential clinical care under professional medical secrecy.',
+      ft_desc: 'Private clinical psychology practice of Psic. Fátima Escudero. Lima, Peru.',
       ft_contact: 'Contact',
-      ft_location: 'Lima, Peru · San Isidro / San Borja',
+      ft_location: 'Lima, Peru · San Isidro, San Borja & La Victoria',
       ft_hours: 'Office Hours',
       ft_schedule: 'Monday to Friday: 10:00 AM – 8:00 PM',
       ft_weekend: 'Saturday & Sunday: Closed',
       ft_rights: 'All rights reserved',
-      modal_title: '🌿 Request Generated!',
+      modal_title: '🌿 Booking Request Generated!',
       modal_desc: 'Your request code is:',
-      modal_inst: 'Click below to open WhatsApp with your pre-filled booking. Please attach your payment receipt screenshot in the chat.',
+      modal_inst: 'Click below to open WhatsApp with your booking details. Please send your payment screenshot in the chat for confirmation.',
       modal_wa_btn: 'Open WhatsApp & Send',
       modal_close: 'Close',
-      services: [
-        { id: 'individual', icon: '🧠', name: 'Individual Therapy', price: 60.00, currency: '$', period: '60-minute session · Online or In-person', desc: 'Customized clinical psychotherapy focused on emotional regulation and mental well-being.' },
-        { id: 'pareja', icon: '💑', name: 'Couples Therapy', price: 80.00, currency: '$', period: '60-minute session · Online or In-person', desc: 'Relational guidance to foster constructive communication and resolve emotional conflicts.' }
-      ],
-      payment_title: '💳 Authorized International Payment Method',
-      payment_methods: [
-        { name: 'PayPal', detail: '@fatimaescudero (paypal.me/fatimaescudero)' }
-      ],
-      days_short: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      days_short: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       days_full: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      summary_patient: 'Patient',
-      summary_dni: 'ID / Passport',
-      summary_wa: 'WhatsApp',
-      summary_email: 'Email',
-      summary_service: 'Service',
-      summary_modality: 'Mode',
-      summary_date: 'Date & Time',
-      summary_reason: 'Reason',
-      summary_total: 'TOTAL INVESTMENT',
-      summary_payment: 'Payment Account',
-      summary_voucher: 'Receipt Attached',
-      pack_session: 'Session',
-      pack_ready: '✓ Ready',
-      pack_pending: 'Pending'
+      services: [
+        { id: 'individual', name: 'Individual Therapy', price: 60.00, currency: '$', period: '60-minute session' },
+        { id: 'pareja', name: 'Couples Therapy', price: 80.00, currency: '$', period: '60-minute session' }
+      ],
+      payment_methods: [
+        { name: 'PayPal', badge: 'International', number: '@fatimaescudero', extra: 'paypal.me/fatimaescudero' }
+      ]
     }
   },
 
@@ -215,6 +187,8 @@ const I18N = {
       if (typeof val === 'string') {
         if (key === 'hero_title') {
           el.textContent = val;
+        } else if (key === 'pres_services_summary' || key === 'wa_disclaimer') {
+          el.innerHTML = val;
         } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
           el.placeholder = val;
         } else {
@@ -223,38 +197,34 @@ const I18N = {
       }
     });
 
-    // If Pack4 was selected in ES and user switched to EN, switch to individual
-    if (lang === 'en' && wizardState.service === 'pack4') {
-      wizardState.service = 'individual';
-      wizardState.packSessions = [null, null, null, null];
-      wizardState.currentPackTab = 0;
-      wizardState.selectedDate = null;
-      wizardState.selectedTime = null;
+    // In EN, strictly force individual if pack4 was selected
+    if (lang === 'en' && bookingState.service === 'pack4') {
+      bookingState.service = 'individual';
+      bookingState.packSessions = [null, null, null, null];
+      bookingState.currentPackTab = 0;
     }
 
-    if (typeof renderBioAreas === 'function') renderBioAreas();
-    if (typeof renderServicesGrid === 'function') renderServicesGrid();
-    if (typeof renderServiceSelector === 'function') renderServiceSelector();
-    if (typeof renderCalendar === 'function') renderCalendar();
-    if (typeof renderTimeslots === 'function') renderTimeslots();
-    if (typeof renderPackTabs === 'function') renderPackTabs();
+    renderPresentationAreas();
+    renderTherapyOptions();
+    renderPaymentAccounts();
+    updateInvestmentCard();
+    renderCalendar();
+    renderTimeSlots();
   }
 };
 
 // ============================================================
-// 2. AUTHENTICATION & SECURITY MODULE
+// 2. AUTHENTICATION (ADMIN ACCESS & SESSION TIMEOUT)
 // ============================================================
 const AppAuth = {
   _sessionKey: 'ysp_admin_auth_session',
-  _timeoutMs: 30 * 60 * 1000, // 30 min session timeout
+  _timeoutMs: 30 * 60 * 1000,
 
   login(user, pass) {
-    // Verified clinical credentials for Psic. Fatima Escudero
     if (user === 'fatima.escudero' && pass === 'YSP2026Fatima!') {
       const token = 'ysp_jwt_' + Math.random().toString(36).substring(2) + Date.now().toString(36);
       const session = { token, user, ts: Date.now() };
       sessionStorage.setItem(this._sessionKey, JSON.stringify(session));
-      localStorage.setItem('ysp_admin_active_tab', '1');
       return true;
     }
     return false;
@@ -270,7 +240,6 @@ const AppAuth = {
         this.logout();
         return false;
       }
-      // Refresh active session timestamp
       s.ts = Date.now();
       sessionStorage.setItem(this._sessionKey, JSON.stringify(s));
       return true;
@@ -281,13 +250,12 @@ const AppAuth = {
 
   logout() {
     sessionStorage.removeItem(this._sessionKey);
-    localStorage.removeItem('ysp_admin_active_tab');
     window.location.href = 'login.html';
   }
 };
 
 // ============================================================
-// 3. CLINICAL DATA STORE & PERSISTENCE
+// 3. PERSISTENT STORAGE & REAL-TIME SYNC
 // ============================================================
 const Store = {
   _key: 'ysp_clinical_appointments_v1',
@@ -309,7 +277,13 @@ const Store = {
 
   add(appt) {
     const list = this.getAll();
-    list.unshift(appt); // newest first
+    list.unshift(appt);
+    this.save(list);
+  },
+
+  remove(code) {
+    let list = this.getAll();
+    list = list.filter(a => a.code !== code);
     this.save(list);
   },
 
@@ -346,7 +320,6 @@ const Store = {
     window.dispatchEvent(new Event('ysp-data-change'));
   },
 
-  // Returns all slots currently confirmed (locked)
   getConfirmedSlots() {
     const list = this.getAll().filter(a => a.status === 'confirmed');
     const slots = [];
@@ -362,13 +335,12 @@ const Store = {
     return slots;
   },
 
-  // Rate Limiter: Prevent flooding (max 4 per 5 minutes)
   checkRateLimit() {
     try {
       let attempts = JSON.parse(localStorage.getItem(this._rateLimitKey)) || [];
       const now = Date.now();
       attempts = attempts.filter(t => now - t < 300000);
-      if (attempts.length >= 4) return false;
+      if (attempts.length >= 5) return false;
       attempts.push(now);
       localStorage.setItem(this._rateLimitKey, JSON.stringify(attempts));
       return true;
@@ -378,7 +350,6 @@ const Store = {
   }
 };
 
-// Real-time synchronization across browser tabs
 window.addEventListener('storage', (e) => {
   if (e.key === Store._key || e.key === Store._blockedKey) {
     window.dispatchEvent(new Event('ysp-data-change'));
@@ -386,7 +357,7 @@ window.addEventListener('storage', (e) => {
 });
 
 // ============================================================
-// 4. SANITIZATION & STRING HELPERS
+// 4. HELPERS
 // ============================================================
 function escapeHTML(str) {
   if (!str) return '';
@@ -419,9 +390,6 @@ function formatDateLong(dateStr, lang) {
   return targetLang === 'es' ? `${dayName} ${dayNum} de ${monthName}` : `${dayName}, ${monthName} ${dayNum}`;
 }
 
-// ============================================================
-// 5. CALENDAR & TIME-SLOT CALCULATION ENGINE
-// ============================================================
 const CLINICAL_HOURS = [
   '10:00 AM',
   '11:00 AM',
@@ -457,8 +425,6 @@ function getAvailableSlots(selectedDateKey) {
 
     if (selectedDateKey === todayKey) {
       const slotMinutes = slotToMinutes(slot);
-      // STRICT 10-MINUTE RULE:
-      // If the slot starts in less than 10 minutes from now, it is closed!
       if (slotMinutes - currentMinutes < 10) {
         return { time: slot, status: 'closed' };
       }
@@ -471,12 +437,11 @@ function getAvailableSlots(selectedDateKey) {
 }
 
 // ============================================================
-// 6. PATIENT-SIDE CONTROLLER & WIZARD
+// 5. UNIFIED BOOKING STATE & CONTROLLER
 // ============================================================
-const wizardState = {
-  step: 1,
-  service: 'individual',
+const bookingState = {
   modality: 'presencial',
+  service: 'individual',
   selectedDate: null,
   selectedTime: null,
   packSessions: [null, null, null, null],
@@ -484,12 +449,11 @@ const wizardState = {
   calMonth: new Date().getMonth(),
   calYear: new Date().getFullYear(),
   voucherFile: null,
-  voucherBase64: null,
-  activeApptCode: null
+  voucherBase64: null
 };
 
 function isPatientPage() {
-  return document.getElementById('wizardStep1') !== null;
+  return document.getElementById('agendamiento') !== null;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -528,136 +492,127 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Hero entrance trigger
   setTimeout(() => {
-    document.getElementById('heroText')?.classList.add('visible');
-    document.getElementById('heroImg')?.classList.add('visible');
+    document.getElementById('presText')?.classList.add('visible');
+    document.getElementById('presImg')?.classList.add('visible');
   }, 100);
 
   // Initialize UI components
-  renderBioAreas();
-  renderServicesGrid();
-  renderServiceSelector();
+  renderPresentationAreas();
+  initModalitySelector();
+  renderTherapyOptions();
   renderCalendar();
-  initFormValidation();
-  initVoucherUpload();
-  initWizardNavigation();
+  renderPaymentAccounts();
+  updateInvestmentCard();
+  initPatientFormValidation();
+  initVoucherUploadButton();
+  initWhatsAppSubmit();
 
-  // 30-Second Real-Time Check for 10-minute rule & appointment blocks
+  // 30-Second Real-Time Check for 10-minute rule
   setInterval(() => {
-    if (wizardState.step === 2 && (wizardState.selectedDate || wizardState.service === 'pack4')) {
-      renderTimeslots();
+    if (bookingState.selectedDate || bookingState.service === 'pack4') {
+      renderTimeSlots();
     }
   }, 30000);
 
-  // Cross-tab reactive updates
+  // Reactive cross-tab updates
   window.addEventListener('ysp-data-change', () => {
-    if (wizardState.step === 2) {
-      renderCalendar();
-      renderTimeslots();
-    }
+    renderCalendar();
+    renderTimeSlots();
   });
 });
 
-// --- Bio Areas Stagger ---
-function renderBioAreas() {
-  const container = document.getElementById('bioAreas');
+// --- Presentation Areas ---
+function renderPresentationAreas() {
+  const container = document.getElementById('presAreas');
   if (!container) return;
   const areas = I18N.t('bio_areas');
-  if (!Array.isArray(areas)) return;
-
-  container.innerHTML = areas.map((a, i) => `
-    <span class="badge" style="transition-delay:${i * 45}ms">${escapeHTML(a)}</span>
-  `).join('');
-
-  // Reveal badges with stagger
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        container.querySelectorAll('.badge').forEach(b => b.classList.add('visible'));
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-  observer.observe(container);
-
-  // Fallback check in case container is already in viewport
-  setTimeout(() => {
-    const rect = container.getBoundingClientRect();
-    if (rect.top < window.innerHeight + 100) {
-      container.querySelectorAll('.badge').forEach(b => b.classList.add('visible'));
-    }
-  }, 250);
+  container.innerHTML = areas.map(a => `<span class="badge">${escapeHTML(a)}</span>`).join('');
 }
 
-// --- Services Grid ---
-function renderServicesGrid() {
-  const grid = document.getElementById('servicesGrid');
+// --- Modality Selector ---
+function initModalitySelector() {
+  const presencial = document.getElementById('modPresencial');
+  const virtual = document.getElementById('modVirtual');
+
+  presencial?.addEventListener('click', () => {
+    presencial.classList.add('selected');
+    virtual.classList.remove('selected');
+    bookingState.modality = 'presencial';
+    updateInvestmentCard();
+  });
+
+  virtual?.addEventListener('click', () => {
+    virtual.classList.add('selected');
+    presencial.classList.remove('selected');
+    bookingState.modality = 'virtual';
+    updateInvestmentCard();
+  });
+}
+
+// --- Therapy Options ---
+function renderTherapyOptions() {
+  const grid = document.getElementById('therapyGrid');
   if (!grid) return;
   const services = I18N.t('services');
   const isEN = I18N.currentLang === 'en';
 
-  grid.className = 'services-grid' + (isEN ? ' cols-2' : '');
-  grid.innerHTML = services.map(s => `
-    <div class="service-card">
-      <div class="service-icon">${s.icon}</div>
-      <h3>${escapeHTML(s.name)}</h3>
-      <div class="price">
-        <span class="price-currency">${s.currency}</span> ${s.price.toFixed(2)}
+  grid.className = 'therapy-grid' + (isEN ? ' cols-2' : '');
+  grid.innerHTML = services.map(s => {
+    const isSelected = bookingState.service === s.id;
+    const isWarm = !!s.warm;
+    const classes = [
+      'therapy-card',
+      isSelected ? 'selected' : '',
+      isWarm ? 'warm-highlight' : ''
+    ].filter(Boolean).join(' ');
+
+    return `
+      <div class="${classes}" data-service="${s.id}">
+        <div class="top-row">
+          <div class="radio-label">
+            <span class="radio-circle"></span>
+            <h4>${escapeHTML(s.name)}</h4>
+          </div>
+          <span class="price-pill">${s.currency} ${s.price.toFixed(2)}</span>
+        </div>
+        <div class="therapy-desc">${escapeHTML(s.period)}</div>
       </div>
-      <p class="price-period">${escapeHTML(s.period)}</p>
-      <p style="margin-top:8px">${escapeHTML(s.desc)}</p>
-      ${s.save ? `<div class="save-badge">${escapeHTML(s.save)}</div>` : ''}
-    </div>
-  `).join('');
-}
+    `;
+  }).join('');
 
-// --- Service Selector in Wizard ---
-function renderServiceSelector() {
-  const container = document.getElementById('serviceSelector');
-  if (!container) return;
-  const services = I18N.t('services');
+  grid.querySelectorAll('.therapy-card').forEach(card => {
+    card.addEventListener('click', () => {
+      grid.querySelectorAll('.therapy-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
 
-  container.innerHTML = services.map(s => `
-    <div class="service-option ${wizardState.service === s.id ? 'selected' : ''}" data-service="${s.id}">
-      <div class="opt-icon">${s.icon}</div>
-      <h4>${escapeHTML(s.name)}</h4>
-      <div class="opt-price">${s.currency} ${s.price.toFixed(2)}</div>
-    </div>
-  `).join('');
+      const prevService = bookingState.service;
+      bookingState.service = card.dataset.service;
 
-  container.querySelectorAll('.service-option').forEach(opt => {
-    opt.addEventListener('click', () => {
-      container.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
-      opt.classList.add('selected');
-      const prev = wizardState.service;
-      wizardState.service = opt.dataset.service;
-      if (prev !== wizardState.service) {
-        wizardState.selectedDate = null;
-        wizardState.selectedTime = null;
-        wizardState.packSessions = [null, null, null, null];
-        wizardState.currentPackTab = 0;
+      if (prevService !== bookingState.service) {
+        bookingState.selectedDate = null;
+        bookingState.selectedTime = null;
+        bookingState.packSessions = [null, null, null, null];
+        bookingState.currentPackTab = 0;
       }
+
+      updateInvestmentCard();
+      renderPackTabs();
+      renderCalendar();
+      renderTimeSlots();
     });
   });
 
-  // Modality options
-  document.querySelectorAll('.modality-option').forEach(opt => {
-    opt.classList.toggle('selected', opt.dataset.modality === wizardState.modality);
-    opt.onclick = () => {
-      document.querySelectorAll('.modality-option').forEach(o => o.classList.remove('selected'));
-      opt.classList.add('selected');
-      wizardState.modality = opt.dataset.modality;
-    };
-  });
+  renderPackTabs();
 }
 
 // --- Calendar ---
 function renderCalendar() {
-  const grid = document.getElementById('calendarGrid');
+  const grid = document.getElementById('calGrid');
   const label = document.getElementById('calMonthYear');
   if (!grid || !label) return;
 
-  const year = wizardState.calYear;
-  const month = wizardState.calMonth;
+  const year = bookingState.calYear;
+  const month = bookingState.calMonth;
   const months = I18N.t('months');
   const daysShort = I18N.t('days_short');
   const today = new Date();
@@ -666,20 +621,25 @@ function renderCalendar() {
 
   label.textContent = `${months[month]} ${year}`;
 
-  const firstDay = new Date(year, month, 1).getDay();
+  // European week starting Monday: 0=Sun -> 6, 1=Mon -> 0, etc.
+  const firstDayRaw = new Date(year, month, 1).getDay();
+  const firstDay = firstDayRaw === 0 ? 6 : firstDayRaw - 1;
   const totalDays = new Date(year, month + 1, 0).getDate();
 
-  let html = daysShort.map(d => `<div class="day-label">${d}</div>`).join('');
+  let html = daysShort.map((d, idx) => {
+    const isWeekend = idx === 5 || idx === 6; // Sáb, Dom
+    return `<div class="day-name ${isWeekend ? 'weekend' : ''}">${d}</div>`;
+  }).join('');
 
   for (let i = 0; i < firstDay; i++) {
-    html += '<div class="day-cell empty"></div>';
+    html += '<div class="day-btn empty"></div>';
   }
 
   for (let d = 1; d <= totalDays; d++) {
     const dt = new Date(year, month, d);
     const dk = dateKey(dt);
     const dow = dt.getDay();
-    const isWeekend = dow === 0 || dow === 6; // Sunday or Saturday
+    const isWeekend = dow === 0 || dow === 6;
     const isPast = dk < todayStr;
     const isBlocked = blockedDays.includes(dk);
     const isDisabled = isWeekend || isPast || isBlocked;
@@ -688,28 +648,36 @@ function renderCalendar() {
     let isSelected = false;
     let packBadges = '';
 
-    if (wizardState.service === 'pack4') {
-      const activeTabDate = wizardState.packSessions[wizardState.currentPackTab]?.dateKey;
+    if (bookingState.service === 'pack4') {
+      const activeTabDate = bookingState.packSessions[bookingState.currentPackTab]?.dateKey;
       isSelected = activeTabDate === dk;
-      wizardState.packSessions.forEach((s, idx) => {
+      bookingState.packSessions.forEach((s, idx) => {
         if (s && s.dateKey === dk) {
           packBadges += `<span class="pack-badge">S${idx + 1}</span>`;
         }
       });
     } else {
-      isSelected = wizardState.selectedDate === dk;
+      isSelected = bookingState.selectedDate === dk;
     }
 
     const classes = [
-      'day-cell',
+      'day-btn',
       isDisabled ? 'disabled' : '',
       isToday ? 'today' : '',
       isSelected ? 'selected' : ''
     ].filter(Boolean).join(' ');
 
+    let subLabel = '';
+    if (isToday) {
+      subLabel = '<span class="sub-lbl">Hoy</span>';
+    } else if (isWeekend || isBlocked) {
+      subLabel = '<span class="sub-lbl" style="color:var(--warm)">Cerrado</span>';
+    }
+
     html += `
       <div class="${classes}" data-date="${dk}">
-        ${d}
+        <span>${d}</span>
+        ${subLabel}
         ${packBadges}
       </div>
     `;
@@ -717,35 +685,34 @@ function renderCalendar() {
 
   grid.innerHTML = html;
 
-  // Day selection click
-  grid.querySelectorAll('.day-cell:not(.disabled):not(.empty)').forEach(cell => {
-    cell.addEventListener('click', () => {
-      const dk = cell.dataset.date;
-      if (wizardState.service === 'pack4') {
-        const tab = wizardState.currentPackTab;
-        if (!wizardState.packSessions[tab]) wizardState.packSessions[tab] = {};
-        wizardState.packSessions[tab].dateKey = dk;
-        wizardState.packSessions[tab].time = null; // reset time on date change
+  grid.querySelectorAll('.day-btn:not(.disabled):not(.empty)').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dk = btn.dataset.date;
+      if (bookingState.service === 'pack4') {
+        const tab = bookingState.currentPackTab;
+        if (!bookingState.packSessions[tab]) bookingState.packSessions[tab] = {};
+        bookingState.packSessions[tab].dateKey = dk;
+        bookingState.packSessions[tab].time = null;
       } else {
-        wizardState.selectedDate = dk;
-        wizardState.selectedTime = null;
+        bookingState.selectedDate = dk;
+        bookingState.selectedTime = null;
       }
       renderCalendar();
-      renderTimeslots();
+      renderTimeSlots();
       renderPackTabs();
+      updateInvestmentCard();
     });
   });
 
-  // Calendar month navigation
   const prevBtn = document.getElementById('calPrev');
   const nextBtn = document.getElementById('calNext');
   if (prevBtn) {
     prevBtn.onclick = (e) => {
       e.stopPropagation();
-      wizardState.calMonth--;
-      if (wizardState.calMonth < 0) {
-        wizardState.calMonth = 11;
-        wizardState.calYear--;
+      bookingState.calMonth--;
+      if (bookingState.calMonth < 0) {
+        bookingState.calMonth = 11;
+        bookingState.calYear--;
       }
       renderCalendar();
     };
@@ -753,10 +720,10 @@ function renderCalendar() {
   if (nextBtn) {
     nextBtn.onclick = (e) => {
       e.stopPropagation();
-      wizardState.calMonth++;
-      if (wizardState.calMonth > 11) {
-        wizardState.calMonth = 0;
-        wizardState.calYear++;
+      bookingState.calMonth++;
+      if (bookingState.calMonth > 11) {
+        bookingState.calMonth = 0;
+        bookingState.calYear++;
       }
       renderCalendar();
     };
@@ -764,86 +731,113 @@ function renderCalendar() {
 }
 
 // --- Time Slots ---
-function renderTimeslots() {
-  const container = document.getElementById('timeslotsContent');
-  if (!container) return;
+function renderTimeSlots() {
+  const container = document.getElementById('slotsList');
+  const dateTitle = document.getElementById('slotsDateTitle');
+  const freeBadge = document.getElementById('slotsFreeBadge');
+  const selectedText = document.getElementById('selectedSlotText');
+  if (!container || !dateTitle) return;
 
   let activeDate = null;
-  if (wizardState.service === 'pack4') {
-    activeDate = wizardState.packSessions[wizardState.currentPackTab]?.dateKey;
+  let selectedTime = null;
+
+  if (bookingState.service === 'pack4') {
+    const tab = bookingState.currentPackTab;
+    activeDate = bookingState.packSessions[tab]?.dateKey;
+    selectedTime = bookingState.packSessions[tab]?.time;
   } else {
-    activeDate = wizardState.selectedDate;
+    activeDate = bookingState.selectedDate;
+    selectedTime = bookingState.selectedTime;
   }
 
   if (!activeDate) {
-    container.innerHTML = `<div class="no-date-selected">${escapeHTML(I18N.t('s2_no_date'))}</div>`;
+    dateTitle.textContent = I18N.t('slots_placeholder');
+    if (freeBadge) freeBadge.textContent = '—';
+    container.innerHTML = `<div style="text-align:center;color:var(--muted);padding:30px 10px;font-size:13px;">${escapeHTML(I18N.t('slots_placeholder'))}</div>`;
+    if (selectedText) selectedText.textContent = '—';
     return;
   }
 
+  dateTitle.textContent = formatDateLong(activeDate);
+
   const slots = getAvailableSlots(activeDate);
 
-  // Check collision for Pack 4 sessions (cannot pick same date & time in different sessions)
-  const internalCollisions = [];
-  if (wizardState.service === 'pack4') {
-    wizardState.packSessions.forEach((s, idx) => {
-      if (s && s.dateKey === activeDate && s.time && idx !== wizardState.currentPackTab) {
-        internalCollisions.push(s.time);
+  // Check collision in other sessions of Pack 4
+  const packCollisions = [];
+  if (bookingState.service === 'pack4') {
+    bookingState.packSessions.forEach((s, idx) => {
+      if (s && s.dateKey === activeDate && s.time && idx !== bookingState.currentPackTab) {
+        packCollisions.push(s.time);
       }
     });
   }
 
-  let selectedTime = null;
-  if (wizardState.service === 'pack4') {
-    selectedTime = wizardState.packSessions[wizardState.currentPackTab]?.time;
-  } else {
-    selectedTime = wizardState.selectedTime;
+  const freeSlotsCount = slots.filter(s => s.status === 'available' && !packCollisions.includes(s.time)).length;
+  if (freeBadge) freeBadge.textContent = `${freeSlotsCount} horario(s) libre(s)`;
+
+  if (selectedText) {
+    if (selectedTime) {
+      selectedText.textContent = `${formatDateLong(activeDate)} · ${selectedTime}`;
+    } else {
+      selectedText.textContent = `${formatDateLong(activeDate)} · Elige una hora`;
+    }
   }
 
-  container.innerHTML = `
-    <div class="timeslots-grid">
-      ${slots.map(slot => {
-        const isCollision = internalCollisions.includes(slot.time);
-        const isBooked = slot.status === 'booked';
-        const isClosed = slot.status === 'closed' || isBooked || isCollision;
-        const isSelected = selectedTime === slot.time;
+  container.innerHTML = slots.map(slot => {
+    const isBooked = slot.status === 'booked';
+    const isCollision = packCollisions.includes(slot.time);
+    const isClosed = slot.status === 'closed' || isBooked || isCollision;
+    const isSelected = selectedTime === slot.time;
 
-        let displayLabel = slot.time;
-        if (isBooked) displayLabel += ' (Ocupado)';
-        else if (isCollision) displayLabel += ' (En paquete)';
-        else if (slot.status === 'closed') displayLabel = I18N.t('s2_unavailable');
+    let badgeText = 'DISPONIBLE';
+    let rowClass = 'slot-row';
 
-        return `
-          <div class="time-slot ${isClosed ? 'disabled' : ''} ${isSelected ? 'selected' : ''}" data-time="${slot.time}">
-            ${displayLabel}
-          </div>
-        `;
-      }).join('')}
-    </div>
-  `;
+    if (isSelected) {
+      badgeText = 'SELECCIONADO';
+      rowClass += ' selected';
+    } else if (isBooked) {
+      badgeText = 'OCUPADO';
+      rowClass += ' disabled booked';
+    } else if (isCollision) {
+      badgeText = 'EN PAQUETE';
+      rowClass += ' disabled';
+    } else if (slot.status === 'closed') {
+      badgeText = 'CERRADO';
+      rowClass += ' disabled';
+    }
 
-  container.querySelectorAll('.time-slot:not(.disabled)').forEach(slotEl => {
-    slotEl.addEventListener('click', () => {
-      const time = slotEl.dataset.time;
-      if (wizardState.service === 'pack4') {
-        const tab = wizardState.currentPackTab;
-        if (!wizardState.packSessions[tab]) wizardState.packSessions[tab] = {};
-        wizardState.packSessions[tab].time = time;
+    return `
+      <div class="${rowClass}" data-time="${slot.time}">
+        <span>⏰ ${slot.time}</span>
+        <span class="status-pill">${badgeText}</span>
+      </div>
+    `;
+  }).join('');
+
+  container.querySelectorAll('.slot-row:not(.disabled)').forEach(row => {
+    row.addEventListener('click', () => {
+      const time = row.dataset.time;
+      if (bookingState.service === 'pack4') {
+        const tab = bookingState.currentPackTab;
+        if (!bookingState.packSessions[tab]) bookingState.packSessions[tab] = {};
+        bookingState.packSessions[tab].time = time;
 
         renderPackTabs();
 
-        // Auto-advance to next session tab if available
+        // Advance to next uncompleted tab
         if (tab < 3) {
-          wizardState.currentPackTab = tab + 1;
+          bookingState.currentPackTab = tab + 1;
           renderPackTabs();
           renderCalendar();
-          renderTimeslots();
+          renderTimeSlots();
         } else {
-          renderTimeslots();
+          renderTimeSlots();
         }
       } else {
-        wizardState.selectedTime = time;
-        renderTimeslots();
+        bookingState.selectedTime = time;
+        renderTimeSlots();
       }
+      updateInvestmentCard();
     });
   });
 }
@@ -854,61 +848,104 @@ function renderPackTabs() {
   const tabsList = document.getElementById('packTabs');
   if (!container || !tabsList) return;
 
-  if (wizardState.service !== 'pack4') {
+  if (bookingState.service !== 'pack4') {
     container.classList.add('hidden');
     return;
   }
   container.classList.remove('hidden');
 
-  tabsList.innerHTML = wizardState.packSessions.map((s, idx) => {
+  tabsList.innerHTML = bookingState.packSessions.map((s, idx) => {
     const isDone = s && s.dateKey && s.time;
-    const isActive = idx === wizardState.currentPackTab;
+    const isActive = idx === bookingState.currentPackTab;
     return `
       <div class="pack-tab ${isActive ? 'active' : ''} ${isDone ? 'done' : ''}" data-tab="${idx}">
-        ${I18N.t('pack_session')} ${idx + 1}
-        <span class="tab-status">${isDone ? I18N.t('pack_ready') : I18N.t('pack_pending')}</span>
+        <span class="tab-num">Sesión ${idx + 1}</span>
+        <span class="tab-status">${isDone ? '✓ ' + s.time : 'Pendiente'}</span>
       </div>
     `;
   }).join('');
 
   tabsList.querySelectorAll('.pack-tab').forEach(tab => {
     tab.addEventListener('click', () => {
-      wizardState.currentPackTab = parseInt(tab.dataset.tab, 10);
+      bookingState.currentPackTab = parseInt(tab.dataset.tab, 10);
       renderPackTabs();
       renderCalendar();
-      renderTimeslots();
+      renderTimeSlots();
     });
   });
 }
 
-// --- Form Validation & Sanitization ---
-function initFormValidation() {
+// --- Investment Card ---
+function updateInvestmentCard() {
+  const invAmount = document.getElementById('invAmount');
+  const invSub = document.getElementById('invSub');
+  const badgeModality = document.getElementById('badgeModality');
+  const badgeDateTime = document.getElementById('badgeDateTime');
+  if (!invAmount || !invSub) return;
+
+  const services = I18N.t('services');
+  const srv = services.find(s => s.id === bookingState.service) || services[0];
+
+  invAmount.textContent = `${srv.currency} ${srv.price.toFixed(2)}`;
+  invSub.textContent = `${srv.name} (${srv.period} · Psic. Fátima Escudero)`;
+
+  if (badgeModality) {
+    badgeModality.textContent = bookingState.modality === 'presencial' ? 'Presencial (Lima)' : 'Virtual (Meet / Zoom)';
+  }
+
+  if (badgeDateTime) {
+    if (bookingState.service === 'pack4') {
+      const completed = bookingState.packSessions.filter(s => s && s.dateKey && s.time).length;
+      badgeDateTime.textContent = completed === 4 ? 'Pack: 4 sesiones programadas' : `Pack: ${completed} de 4 sesiones elegidas`;
+    } else if (bookingState.selectedDate && bookingState.selectedTime) {
+      badgeDateTime.textContent = `${formatDateLong(bookingState.selectedDate)} · ${bookingState.selectedTime}`;
+    } else {
+      badgeDateTime.textContent = 'Selecciona fecha y hora';
+    }
+  }
+}
+
+// --- Payment Accounts ---
+function renderPaymentAccounts() {
+  const grid = document.getElementById('accountsGrid');
+  if (!grid) return;
+  const methods = I18N.t('payment_methods');
+
+  grid.innerHTML = methods.map(m => `
+    <div class="account-card">
+      <div class="acc-header">
+        <span class="acc-name">${escapeHTML(m.name)}</span>
+        <span class="acc-badge">${escapeHTML(m.badge)}</span>
+      </div>
+      <div class="acc-number">${escapeHTML(m.number)}</div>
+      <div class="acc-cci">${escapeHTML(m.extra)}</div>
+    </div>
+  `).join('');
+}
+
+// --- Patient Form Validation ---
+function initPatientFormValidation() {
   const nameEl = document.getElementById('pName');
   const dniEl = document.getElementById('pDNI');
   const waEl = document.getElementById('pWhatsApp');
   const emailEl = document.getElementById('pEmail');
-
   if (!nameEl) return;
 
-  // Name: Strictly Latin letters, accents, ñ, spaces
   nameEl.addEventListener('input', () => {
     nameEl.value = nameEl.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
     checkField(nameEl, /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/);
   });
 
-  // DNI: Strictly digits, 8 to 10
   dniEl.addEventListener('input', () => {
     dniEl.value = dniEl.value.replace(/[^0-9]/g, '');
     checkField(dniEl, /^[0-9]{8,10}$/);
   });
 
-  // WhatsApp: Strictly digits, 9 to 12
   waEl.addEventListener('input', () => {
     waEl.value = waEl.value.replace(/[^0-9]/g, '');
     checkField(waEl, /^[0-9]{9,12}$/);
   });
 
-  // Email: Standard alphanumeric email regex
   emailEl.addEventListener('input', () => {
     checkField(emailEl, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/);
   });
@@ -924,7 +961,7 @@ function checkField(input, regex) {
   return valid;
 }
 
-function validateAllPatientFields() {
+function validatePatientForm() {
   const nameEl = document.getElementById('pName');
   const dniEl = document.getElementById('pDNI');
   const waEl = document.getElementById('pWhatsApp');
@@ -934,358 +971,246 @@ function validateAllPatientFields() {
   const vDni = checkField(dniEl, /^[0-9]{8,10}$/);
   const vWa = checkField(waEl, /^[0-9]{9,12}$/);
   const vEmail = checkField(emailEl, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/);
-  const vVoucher = !!wizardState.voucherFile;
 
-  return vName && vDni && vWa && vEmail && vVoucher;
+  return vName && vDni && vWa && vEmail;
 }
 
-// --- Voucher File Upload ---
-function initVoucherUpload() {
-  const zone = document.getElementById('uploadZone');
-  const input = document.getElementById('pVoucher');
-  const nameDisplay = document.getElementById('fileName');
-  if (!zone || !input) return;
+// --- Voucher Upload Button ---
+function initVoucherUploadButton() {
+  const btn = document.getElementById('btnSelectVoucher');
+  const fileInput = document.getElementById('pVoucher');
+  const statusText = document.getElementById('voucherStatusText');
+  const submitBtn = document.getElementById('btnSubmitWhatsApp');
+  const disclaimer = document.getElementById('waDisclaimer');
 
-  zone.addEventListener('click', () => input.click());
+  if (!btn || !fileInput) return;
 
-  zone.addEventListener('dragover', (e) => {
+  // The button triggers the file input reliably
+  btn.onclick = (e) => {
     e.preventDefault();
-    zone.style.borderColor = 'var(--accent)';
-  });
-
-  zone.addEventListener('dragleave', () => {
-    zone.style.borderColor = '';
-  });
-
-  zone.addEventListener('drop', (e) => {
-    e.preventDefault();
-    zone.style.borderColor = '';
-    if (e.dataTransfer.files.length) handleVoucher(e.dataTransfer.files[0]);
-  });
-
-  input.addEventListener('change', () => {
-    if (input.files.length) handleVoucher(input.files[0]);
-  });
-
-  function handleVoucher(file) {
-    const validTypes = ['image/jpeg', 'image/png', 'image/webp'];
-    if (!validTypes.includes(file.type)) {
-      alert(I18N.currentLang === 'es' ? 'Formato inválido. Por favor adjunta JPG, PNG o WebP.' : 'Invalid file format. Please attach JPG, PNG, or WebP.');
-      return;
-    }
-    if (file.size > 5 * 1024 * 1024) {
-      alert(I18N.currentLang === 'es' ? 'El comprobante excede el límite máximo de 5MB.' : 'File exceeds maximum 5MB size limit.');
-      return;
-    }
-
-    wizardState.voucherFile = file;
-    zone.classList.add('has-file');
-    nameDisplay.textContent = '✅ ' + escapeHTML(file.name);
-    nameDisplay.style.display = 'block';
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      wizardState.voucherBase64 = reader.result;
-    };
-    reader.readAsDataURL(file);
-  }
-}
-
-// --- Wizard Step Controller ---
-function initWizardNavigation() {
-  const prevBtn = document.getElementById('wizPrev');
-  const nextBtn = document.getElementById('wizNext');
-  const submitBtn = document.getElementById('wizSubmit');
-
-  nextBtn?.addEventListener('click', () => {
-    if (canAdvanceStep()) {
-      wizardState.step++;
-      updateWizardView();
-    }
-  });
-
-  prevBtn?.addEventListener('click', () => {
-    wizardState.step--;
-    updateWizardView();
-  });
-
-  submitBtn?.addEventListener('click', () => {
-    handleFormSubmission();
-  });
-}
-
-function canAdvanceStep() {
-  const isES = I18N.currentLang === 'es';
-  if (wizardState.step === 1) {
-    if (!wizardState.service) {
-      alert(isES ? 'Por favor selecciona un tipo de terapia.' : 'Please select a therapy service.');
-      return false;
-    }
-    if (!wizardState.modality) {
-      alert(isES ? 'Por favor selecciona la modalidad (Presencial o Virtual).' : 'Please select a modality (In-person or Online).');
-      return false;
-    }
-    return true;
-  }
-
-  if (wizardState.step === 2) {
-    if (wizardState.service === 'pack4') {
-      const allComplete = wizardState.packSessions.every(s => s && s.dateKey && s.time);
-      if (!allComplete) {
-        alert(isES ? 'Debes seleccionar fecha y hora para las 4 sesiones del paquete.' : 'Please select a date and time for all 4 sessions in the pack.');
-        return false;
-      }
-    } else {
-      if (!wizardState.selectedDate || !wizardState.selectedTime) {
-        alert(isES ? 'Por favor elige una fecha y un horario disponible.' : 'Please choose a date and an available time slot.');
-        return false;
-      }
-    }
-    return true;
-  }
-
-  if (wizardState.step === 3) {
-    if (!validateAllPatientFields()) {
-      alert(isES ? 'Por favor completa todos los campos requeridos con datos válidos y adjunta tu comprobante de pago.' : 'Please complete all required fields with valid data and attach your payment receipt.');
-      return false;
-    }
-    return true;
-  }
-
-  return true;
-}
-
-function updateWizardView() {
-  const step = wizardState.step;
-
-  // Toggle step panels
-  document.querySelectorAll('.wizard-panel').forEach((p, idx) => {
-    p.classList.toggle('active', idx === step - 1);
-  });
-
-  // Toggle step indicators
-  document.querySelectorAll('.wizard-step-indicator').forEach(ind => {
-    const s = parseInt(ind.dataset.step, 10);
-    ind.classList.toggle('active', s === step);
-    ind.classList.toggle('done', s < step);
-  });
-
-  // Buttons visibility
-  const prevBtn = document.getElementById('wizPrev');
-  const nextBtn = document.getElementById('wizNext');
-  const submitBtn = document.getElementById('wizSubmit');
-
-  if (prevBtn) prevBtn.style.display = step > 1 ? '' : 'none';
-  if (nextBtn) nextBtn.classList.toggle('hidden', step === 4);
-  if (submitBtn) submitBtn.classList.toggle('hidden', step !== 4);
-
-  // Renders for current step
-  if (step === 2) {
-    renderPackTabs();
-    renderCalendar();
-    renderTimeslots();
-  } else if (step === 4) {
-    renderSummaryCard();
-  }
-}
-
-// --- Step 4: Summary Card ---
-function renderSummaryCard() {
-  const card = document.getElementById('summaryCard');
-  const payPanel = document.getElementById('paymentInfoPanel');
-  if (!card) return;
-
-  const name = escapeHTML(document.getElementById('pName').value.trim());
-  const dni = escapeHTML(document.getElementById('pDNI').value.trim());
-  const wa = escapeHTML(document.getElementById('pWhatsApp').value.trim());
-  const email = escapeHTML(document.getElementById('pEmail').value.trim());
-  const reason = escapeHTML(document.getElementById('pReason').value.trim() || '—');
-  const services = I18N.t('services');
-  const srv = services.find(s => s.id === wizardState.service);
-  const modalityText = wizardState.modality === 'presencial' ? I18N.t('s1_presencial') : I18N.t('s1_virtual');
-
-  let scheduleHTML = '';
-  if (wizardState.service === 'pack4') {
-    scheduleHTML = `
-      <div class="summary-sessions">
-        <h4>🗓️ Cronograma del Pack (4 Sesiones)</h4>
-        ${wizardState.packSessions.map((s, i) => `
-          <div class="session-item">
-            <span class="num">${i + 1}️⃣</span>
-            <span>Sesión ${i + 1}: <strong>${formatDateLong(s.dateKey)}</strong> · <strong>${s.time}</strong></span>
-          </div>
-        `).join('')}
-      </div>
-    `;
-  } else {
-    scheduleHTML = `
-      <div class="summary-row">
-        <span class="label">${I18N.t('summary_date')}</span>
-        <span class="value">${formatDateLong(wizardState.selectedDate)} · ${wizardState.selectedTime}</span>
-      </div>
-    `;
-  }
-
-  card.innerHTML = `
-    <h3>🌿 ${I18N.t('s4_title')}</h3>
-    <div class="summary-row"><span class="label">${I18N.t('summary_patient')}</span><span class="value">${name}</span></div>
-    <div class="summary-row"><span class="label">${I18N.t('summary_dni')}</span><span class="value">${dni}</span></div>
-    <div class="summary-row"><span class="label">${I18N.t('summary_wa')}</span><span class="value">${wa}</span></div>
-    <div class="summary-row"><span class="label">${I18N.t('summary_email')}</span><span class="value">${email}</span></div>
-    <div class="summary-row"><span class="label">${I18N.t('summary_service')}</span><span class="value">${srv?.name || ''}</span></div>
-    <div class="summary-row"><span class="label">${I18N.t('summary_modality')}</span><span class="value">${modalityText}</span></div>
-    ${scheduleHTML}
-    <div class="summary-row"><span class="label">${I18N.t('summary_reason')}</span><span class="value">${reason}</span></div>
-    <div class="summary-row"><span class="label">${I18N.t('summary_voucher')}</span><span class="value">📎 ${wizardState.voucherFile ? escapeHTML(wizardState.voucherFile.name) : '—'}</span></div>
-    <div class="summary-total">
-      <span>${I18N.t('summary_total')}</span>
-      <span class="total-amount">${srv ? srv.currency + ' ' + srv.price.toFixed(2) : ''}</span>
-    </div>
-  `;
-
-  // Payment information box
-  const methods = I18N.t('payment_methods');
-  if (payPanel) {
-    payPanel.innerHTML = `
-      <div class="payment-info">
-        <h4>${I18N.t('payment_title')}</h4>
-        ${methods.map(m => `
-          <div class="payment-method">
-            <span class="method-name">${escapeHTML(m.name)}</span><br>
-            <span class="method-detail"><code>${escapeHTML(m.detail)}</code></span>
-          </div>
-        `).join('')}
-      </div>
-    `;
-  }
-}
-
-// --- Submit & WhatsApp Link Generation ---
-function handleFormSubmission() {
-  if (!Store.checkRateLimit()) {
-    alert(I18N.currentLang === 'es' ? 'Has superado el límite de intentos. Por favor espera unos minutos.' : 'Rate limit exceeded. Please wait a few moments.');
-    return;
-  }
-
-  const code = generateCode();
-  const services = I18N.t('services');
-  const srv = services.find(s => s.id === wizardState.service);
-  const modalityLabel = wizardState.modality === 'presencial' ? I18N.t('s1_presencial') : I18N.t('s1_virtual');
-  const name = document.getElementById('pName').value.trim();
-  const dni = document.getElementById('pDNI').value.trim();
-  const wa = document.getElementById('pWhatsApp').value.trim();
-  const email = document.getElementById('pEmail').value.trim();
-  const reason = document.getElementById('pReason').value.trim() || '—';
-
-  const appointmentRecord = {
-    code,
-    name: escapeHTML(name),
-    dni: escapeHTML(dni),
-    whatsapp: escapeHTML(wa),
-    email: escapeHTML(email),
-    service: wizardState.service,
-    serviceName: srv?.name || '',
-    modality: wizardState.modality,
-    modalityLabel,
-    reason: escapeHTML(reason),
-    amount: srv?.price || 0,
-    currency: srv?.currency || 'S/.',
-    lang: I18N.currentLang,
-    status: 'pending',
-    createdAt: new Date().toISOString(),
-    voucherName: wizardState.voucherFile?.name || '',
-    voucherData: wizardState.voucherBase64 || null
+    fileInput.click();
   };
 
-  let scheduleWhatsAppText = '';
-  if (wizardState.service === 'pack4') {
-    appointmentRecord.sessions = wizardState.packSessions.map((s, i) => ({
-      num: i + 1,
-      dateKey: s.dateKey,
-      time: s.time,
-      dateLabel: formatDateLong(s.dateKey, 'es')
-    }));
-    scheduleWhatsAppText = appointmentRecord.sessions.map(s => `   ${s.num}️⃣ Sesión ${s.num}: ${s.dateLabel} · ${s.time}`).join('\n');
-  } else {
-    appointmentRecord.dateKey = wizardState.selectedDate;
-    appointmentRecord.time = wizardState.selectedTime;
-    appointmentRecord.dateLabel = formatDateLong(wizardState.selectedDate, 'es');
-    scheduleWhatsAppText = `   ${appointmentRecord.dateLabel} · ${appointmentRecord.time}`;
-  }
+  fileInput.onchange = () => {
+    if (!fileInput.files || fileInput.files.length === 0) return;
+    const file = fileInput.files[0];
 
-  // Save to persistent storage
-  Store.add(appointmentRecord);
+    const validTypes = ['image/jpeg', 'image/png', 'image/webp'];
+    if (!validTypes.includes(file.type)) {
+      alert(I18N.currentLang === 'es' ? 'Formato inválido. Por favor selecciona un archivo JPG, PNG o WebP.' : 'Invalid format. Please select a JPG, PNG, or WebP image.');
+      fileInput.value = '';
+      return;
+    }
 
-  // Exact WhatsApp formatted text per user specification
-  const payMethods = I18N.t('payment_methods');
-  const payAccounts = payMethods.map(m => m.name).join(' / ');
+    if (file.size > 5 * 1024 * 1024) {
+      alert(I18N.currentLang === 'es' ? 'El archivo excede el tamaño máximo permitido de 5MB.' : 'File exceeds maximum 5MB size limit.');
+      fileInput.value = '';
+      return;
+    }
 
-  const whatsappMessage = 
+    bookingState.voucherFile = file;
+
+    // Read Base64 for admin review
+    const reader = new FileReader();
+    reader.onload = () => {
+      bookingState.voucherBase64 = reader.result;
+    };
+    reader.readAsDataURL(file);
+
+    // Update UI Status
+    if (statusText) {
+      statusText.textContent = `✅ ${file.name} (${(file.size / 1024).toFixed(0)} KB)`;
+      statusText.classList.add('attached');
+    }
+
+    // Enable WhatsApp submit button!
+    if (submitBtn) {
+      submitBtn.removeAttribute('disabled');
+    }
+
+    if (disclaimer) {
+      disclaimer.innerHTML = '✅ <strong>Comprobante adjuntado con éxito.</strong> Ahora puedes pulsar el botón para confirmar por WhatsApp.';
+      disclaimer.style.color = 'var(--success)';
+    }
+  };
+}
+
+// --- WhatsApp Submission ---
+function initWhatsAppSubmit() {
+  const submitBtn = document.getElementById('btnSubmitWhatsApp');
+  if (!submitBtn) return;
+
+  submitBtn.onclick = () => {
+    if (!validatePatientForm()) {
+      alert(I18N.currentLang === 'es' ? 'Por favor completa correctamente tus datos personales en el Paso 3.' : 'Please fill in your contact information in Step 3 correctly.');
+      document.getElementById('pName')?.focus();
+      return;
+    }
+
+    if (bookingState.service === 'pack4') {
+      const allSelected = bookingState.packSessions.every(s => s && s.dateKey && s.time);
+      if (!allSelected) {
+        alert(I18N.currentLang === 'es' ? 'Por favor completa la fecha y hora de las 4 sesiones del paquete en el Paso 2.' : 'Please select a date and time for all 4 sessions in Step 2.');
+        return;
+      }
+    } else {
+      if (!bookingState.selectedDate || !bookingState.selectedTime) {
+        alert(I18N.currentLang === 'es' ? 'Por favor selecciona fecha y horario para tu sesión en el Paso 2.' : 'Please choose a session date and time slot in Step 2.');
+        return;
+      }
+    }
+
+    if (!bookingState.voucherFile) {
+      alert(I18N.currentLang === 'es' ? 'Debes adjuntar el comprobante de pago en el Paso 4 para continuar.' : 'Please attach your payment receipt in Step 4 to continue.');
+      return;
+    }
+
+    if (!Store.checkRateLimit()) {
+      alert(I18N.currentLang === 'es' ? 'Has realizado demasiados intentos. Por favor espera unos minutos.' : 'Too many attempts. Please wait a few moments.');
+      return;
+    }
+
+    // Build Record
+    const code = generateCode();
+    const services = I18N.t('services');
+    const srv = services.find(s => s.id === bookingState.service) || services[0];
+    const name = document.getElementById('pName').value.trim();
+    const dni = document.getElementById('pDNI').value.trim();
+    const wa = document.getElementById('pWhatsApp').value.trim();
+    const email = document.getElementById('pEmail').value.trim();
+    const reason = document.getElementById('pReason').value.trim() || '—';
+    const modalityLabel = bookingState.modality === 'presencial' ? 'Presencial (Lima)' : 'Virtual (Meet / Zoom)';
+
+    const appt = {
+      code,
+      name: escapeHTML(name),
+      dni: escapeHTML(dni),
+      whatsapp: escapeHTML(wa),
+      email: escapeHTML(email),
+      service: bookingState.service,
+      serviceName: srv.name,
+      modality: bookingState.modality,
+      modalityLabel,
+      reason: escapeHTML(reason),
+      amount: srv.price,
+      currency: srv.currency,
+      lang: I18N.currentLang,
+      status: 'pending',
+      createdAt: new Date().toISOString(),
+      voucherName: bookingState.voucherFile?.name || '',
+      voucherData: bookingState.voucherBase64 || null
+    };
+
+    let scheduleWhatsAppText = '';
+    if (bookingState.service === 'pack4') {
+      appt.sessions = bookingState.packSessions.map((s, i) => ({
+        num: i + 1,
+        dateKey: s.dateKey,
+        time: s.time,
+        dateLabel: formatDateLong(s.dateKey, 'es')
+      }));
+      scheduleWhatsAppText = appt.sessions.map(s => `   ${s.num}️⃣ Sesión ${s.num}: ${s.dateLabel} · ${s.time}`).join('\n');
+    } else {
+      appt.dateKey = bookingState.selectedDate;
+      appt.time = bookingState.selectedTime;
+      appt.dateLabel = formatDateLong(bookingState.selectedDate, 'es');
+      scheduleWhatsAppText = `   ${appt.dateLabel} · ${appt.time}`;
+    }
+
+    // Save to persistent storage
+    Store.add(appt);
+
+    const methods = I18N.t('payment_methods');
+    const payAccounts = methods.map(m => m.name).join(' / ');
+
+    const whatsappMessage = 
 `🌿 *SOLICITUD DE CITA · YOUR SAFE PLACE*
 📄 *Código:* #${code}
 👤 *Paciente:* ${name}
 🆔 *DNI:* ${dni}
 📱 *WhatsApp:* ${wa}
 📧 *Correo:* ${email}
-🧠 *Servicio:* ${srv?.name || ''}
+🧠 *Servicio:* ${srv.name}
 📍 *Modalidad:* ${modalityLabel}
 🗓️ *Fecha y Hora / Cronograma:*
 ${scheduleWhatsAppText}
 💭 *Motivo:* ${reason}
 ─────────────────────
-💰 *INVERSIÓN:* ${srv?.currency || ''} ${srv?.price?.toFixed(2) || ''}
+💰 *INVERSIÓN:* ${srv.currency} ${srv.price.toFixed(2)}
 💳 *Cuenta de pago de sesión terapéutica:* ${payAccounts}
-📎 *COMPROBANTE:* ${appointmentRecord.voucherName || 'voucher.jpg'}. Adjunto la captura en este chat.`;
+📎 *COMPROBANTE:* ${appt.voucherName || 'voucher.jpg'}. Adjunto la captura en este chat.`;
 
-  const waURL = 'https://wa.me/51924368333?text=' + encodeURIComponent(whatsappMessage);
+    const waURL = 'https://wa.me/51924368333?text=' + encodeURIComponent(whatsappMessage);
 
-  // Show Confirmation Modal
-  const modal = document.getElementById('confirmModal');
-  const modalCode = document.getElementById('modalCode');
-  const modalWaBtn = document.getElementById('modalWhatsApp');
-  const modalClose = document.getElementById('modalClose');
+    // Show confirmation modal
+    const modal = document.getElementById('confirmModal');
+    const modalCode = document.getElementById('modalCode');
+    const modalWaBtn = document.getElementById('modalWhatsApp');
+    const modalClose = document.getElementById('modalClose');
 
-  if (modalCode) modalCode.textContent = '#' + code;
-  if (modal) modal.classList.add('show');
+    if (modalCode) modalCode.textContent = '#' + code;
+    if (modal) modal.classList.add('show');
 
-  if (modalWaBtn) {
-    modalWaBtn.onclick = () => {
-      window.open(waURL, '_blank');
-    };
-  }
+    if (modalWaBtn) {
+      modalWaBtn.onclick = () => {
+        window.open(waURL, '_blank');
+      };
+    }
 
-  if (modalClose) {
-    modalClose.onclick = () => {
-      modal.classList.remove('show');
-      resetWizardForm();
-    };
-  }
+    if (modalClose) {
+      modalClose.onclick = () => {
+        modal.classList.remove('show');
+        resetBookingForm();
+      };
+    }
+  };
 }
 
-function resetWizardForm() {
-  wizardState.step = 1;
-  wizardState.selectedDate = null;
-  wizardState.selectedTime = null;
-  wizardState.packSessions = [null, null, null, null];
-  wizardState.currentPackTab = 0;
-  wizardState.voucherFile = null;
-  wizardState.voucherBase64 = null;
+function resetBookingForm() {
+  bookingState.selectedDate = null;
+  bookingState.selectedTime = null;
+  bookingState.packSessions = [null, null, null, null];
+  bookingState.currentPackTab = 0;
+  bookingState.voucherFile = null;
+  bookingState.voucherBase64 = null;
 
-  document.getElementById('patientForm')?.reset();
-  const zone = document.getElementById('uploadZone');
-  const fileName = document.getElementById('fileName');
-  if (zone) zone.classList.remove('has-file');
-  if (fileName) fileName.style.display = 'none';
+  document.getElementById('bookingForm')?.reset();
+  const fileInput = document.getElementById('pVoucher');
+  if (fileInput) fileInput.value = '';
 
-  updateWizardView();
-  renderServiceSelector();
+  const statusText = document.getElementById('voucherStatusText');
+  if (statusText) {
+    statusText.textContent = I18N.t('vch_empty');
+    statusText.classList.remove('attached');
+  }
+
+  const submitBtn = document.getElementById('btnSubmitWhatsApp');
+  if (submitBtn) submitBtn.setAttribute('disabled', 'true');
+
+  const disclaimer = document.getElementById('waDisclaimer');
+  if (disclaimer) {
+    disclaimer.innerHTML = I18N.t('wa_disclaimer');
+    disclaimer.style.color = '';
+  }
+
+  renderCalendar();
+  renderTimeSlots();
+  renderPackTabs();
+  updateInvestmentCard();
 }
 
 // ============================================================
-// 7. ADMIN DASHBOARD CONTROLLER (PSIC. FÁTIMA ESCUDERO)
+// 6. ADMIN DASHBOARD CONTROLLER (PSIC. FÁTIMA ESCUDERO)
 // ============================================================
 const AdminPanel = {
   init() {
+    // Clean up any historical rejected appointments
+    const rawAll = Store.getAll();
+    const activeOnly = rawAll.filter(a => a.status === 'pending' || a.status === 'confirmed');
+    if (activeOnly.length !== rawAll.length) {
+      Store.save(activeOnly);
+    }
+
     this.updateGreeting();
     this.renderKPIs();
     this.renderAppointmentsTable();
@@ -1296,13 +1221,11 @@ const AdminPanel = {
       AppAuth.logout();
     });
 
-    // Reactive refresh when storage changes
     window.addEventListener('ysp-data-change', () => {
       this.renderKPIs();
       this.renderAppointmentsTable();
     });
 
-    // Timeout verification
     setInterval(() => {
       if (!AppAuth.isAuthenticated()) AppAuth.logout();
     }, 60000);
@@ -1326,7 +1249,7 @@ const AdminPanel = {
   },
 
   renderKPIs() {
-    const all = Store.getAll();
+    const all = Store.getAll().filter(a => a.status === 'pending' || a.status === 'confirmed');
     const pending = all.filter(a => a.status === 'pending');
     const confirmed = all.filter(a => a.status === 'confirmed');
 
@@ -1351,13 +1274,18 @@ const AdminPanel = {
     const tbody = document.getElementById('appointmentsBody');
     if (!tbody) return;
 
-    let appointments = Store.getAll().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-    if (filter !== 'all') {
-      appointments = appointments.filter(a => a.status === filter);
+    let appointments = Store.getAll()
+      .filter(a => a.status === 'pending' || a.status === 'confirmed')
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+    if (filter === 'pending') {
+      appointments = appointments.filter(a => a.status === 'pending');
+    } else if (filter === 'confirmed') {
+      appointments = appointments.filter(a => a.status === 'confirmed');
     }
 
     if (appointments.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;color:var(--muted);padding:40px;">No hay solicitudes registradas con este filtro.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;color:var(--muted);padding:40px;">No hay solicitudes activas registradas con este filtro.</td></tr>';
       return;
     }
 
@@ -1371,40 +1299,45 @@ const AdminPanel = {
 
       const statusMap = {
         pending: { class: 'pending', text: '⏳ Pendiente' },
-        confirmed: { class: 'confirmed', text: '✅ Confirmada' },
-        rejected: { class: 'rejected', text: '❌ Rechazada' }
+        confirmed: { class: 'confirmed', text: '✅ Confirmada' }
       };
       const st = statusMap[a.status] || { class: 'pending', text: a.status };
 
-      const voucherThumb = a.voucherData
+      const voucherThumb = a.voucherData && a.voucherData.startsWith('data:image')
         ? `<img class="voucher-thumb" src="${a.voucherData}" alt="Comprobante" onclick="AdminPanel.openVoucherModal('${a.code}')" title="Click para ampliar">`
-        : `<span style="color:var(--muted);font-size:12px;">${escapeHTML(a.voucherName || 'Sin archivo')}</span>`;
+        : `<button class="btn btn-secondary btn-sm" style="font-size:11px;padding:4px 8px;" onclick="AdminPanel.openVoucherModal('${a.code}')">📎 ${escapeHTML(a.voucherName || 'Ver')}</button>`;
 
       let actions = '';
       if (a.status === 'pending') {
         actions = `
-          <div style="display:flex;gap:4px;flex-direction:column;">
+          <div class="action-buttons-group">
             <button class="btn btn-success btn-sm" onclick="AdminPanel.confirmAppointment('${a.code}')">✓ Confirmar</button>
             <button class="btn btn-danger btn-sm" onclick="AdminPanel.rejectAppointment('${a.code}')">✗ Rechazar</button>
           </div>
         `;
       } else if (a.status === 'confirmed') {
-        actions = `<button class="btn btn-secondary btn-sm" onclick="AdminPanel.releaseAppointment('${a.code}')">🔓 Liberar Horario</button>`;
-      } else {
-        actions = `<button class="btn btn-secondary btn-sm" onclick="AdminPanel.confirmAppointment('${a.code}')">Reactivar</button>`;
+        actions = `<button class="btn btn-secondary btn-sm btn-block" onclick="AdminPanel.releaseAppointment('${a.code}')">🔓 Liberar Horario</button>`;
       }
 
       return `
-        <tr>
-          <td><strong style="color:var(--accent);">#${a.code}</strong><br><small style="color:var(--muted);">${new Date(a.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</small></td>
-          <td><strong>${a.name}</strong><br><small style="color:var(--muted);">${a.whatsapp} · ${a.email}</small></td>
-          <td>${a.serviceName}</td>
-          <td style="font-size:13px;line-height:1.4;">${datesDisplay}</td>
-          <td><span style="font-size:12px;padding:3px 8px;border-radius:12px;background:var(--bg-alt);">${a.modalityLabel}</span></td>
-          <td><strong>${a.currency} ${Number(a.amount).toFixed(2)}</strong></td>
-          <td>${voucherThumb}</td>
-          <td><span class="status-badge ${st.class}">${st.text}</span></td>
-          <td>${actions}</td>
+        <tr class="appointment-card-row">
+          <td data-label="Código"><strong style="color:var(--accent);">#${a.code}</strong><br><small style="color:var(--muted);">${new Date(a.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</small></td>
+          <td data-label="Paciente">
+            <div>
+              <strong>${escapeHTML(a.name)}</strong><br>
+              <small style="color:var(--muted);display:inline-block;margin-top:2px;">
+                🆔 <strong>DNI:</strong> ${escapeHTML(a.dni || '—')}<br>
+                📱 ${escapeHTML(a.whatsapp)} · ✉️ ${escapeHTML(a.email)}
+              </small>
+            </div>
+          </td>
+          <td data-label="Servicio">${escapeHTML(a.serviceName)}</td>
+          <td data-label="Fecha(s)" style="font-size:13px;line-height:1.4;"><div class="dates-list">${datesDisplay}</div></td>
+          <td data-label="Modalidad"><span style="font-size:12px;padding:3px 8px;border-radius:12px;background:var(--bg-alt);">${escapeHTML(a.modalityLabel)}</span></td>
+          <td data-label="Monto"><strong>${escapeHTML(a.currency)} ${Number(a.amount).toFixed(2)}</strong></td>
+          <td data-label="Voucher">${voucherThumb}</td>
+          <td data-label="Estado"><span class="status-badge ${st.class}">${st.text}</span></td>
+          <td data-label="Acciones" class="cell-actions">${actions}</td>
         </tr>
       `;
     }).join('');
@@ -1418,28 +1351,30 @@ const AdminPanel = {
   },
 
   rejectAppointment(code) {
-    if (!confirm(`¿Rechazar la cita #${code}?`)) return;
-    Store.update(code, { status: 'rejected' });
+    if (!confirm(`¿Rechazar y descartar la solicitud #${code}?`)) return;
+    Store.remove(code);
     this.renderKPIs();
     this.renderAppointmentsTable(document.getElementById('filterStatus')?.value || 'all');
   },
 
   releaseAppointment(code) {
-    if (!confirm(`¿Liberar el horario de la cita #${code}? El horario volverá a estar disponible en la vista pública.`)) return;
-    Store.update(code, { status: 'rejected' });
+    if (!confirm(`¿Liberar el horario de la cita #${code}? El horario volverá a estar disponible en la web para otros pacientes y la cita se retirará del sistema.`)) return;
+    Store.remove(code);
     this.renderKPIs();
     this.renderAppointmentsTable(document.getElementById('filterStatus')?.value || 'all');
   },
 
   openVoucherModal(code) {
     const appt = Store.getAll().find(a => a.code === code);
-    if (appt?.voucherData) {
+    if (appt?.voucherData && appt.voucherData.startsWith('data:image')) {
       const modal = document.getElementById('voucherModal');
       const img = document.getElementById('voucherModalImg');
       if (img && modal) {
         img.src = appt.voucherData;
         modal.classList.add('show');
       }
+    } else {
+      alert(`Comprobante de la cita #${code} (${appt ? appt.name : ''}):\n${appt?.voucherName || 'Adjunto enviado en el chat de WhatsApp'}`);
     }
   },
 

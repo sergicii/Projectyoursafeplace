@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,32 +9,40 @@
   <link rel="icon" href="assets/logo-fatima.jpg" type="image/jpeg">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body style="background:var(--bg)">
   <div class="login-page">
     <div class="login-card">
       <img src="assets/logo-fatima.jpg" alt="Your Safe Place">
       <h1>Panel de Control</h1>
       <p class="login-subtitle">Your Safe Place · Acceso Privado</p>
-      <div class="login-error" id="loginError">Usuario o contraseña incorrectos.</div>
+      <div class="login-error" id="loginError">⚠️ Usuario o contraseña incorrectos.</div>
       <form id="loginForm">
-        <div class="form-group"><label>Usuario</label><input type="text" id="loginUser" required autocomplete="username"></div>
-        <div class="form-group"><label>Contraseña</label><input type="password" id="loginPass" required autocomplete="current-password"></div>
+        <div class="form-group">
+          <label for="loginUser">Usuario</label>
+          <input type="text" id="loginUser" required autocomplete="username" placeholder="Ingresa tu usuario">
+        </div>
+        <div class="form-group">
+          <label for="loginPass">Contraseña</label>
+          <input type="password" id="loginPass" required autocomplete="current-password" placeholder="••••••••••••">
+        </div>
         <button type="submit" class="btn btn-primary btn-block btn-lg mt-2">Iniciar Sesión</button>
       </form>
     </div>
   </div>
   <script src="app.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded',()=>{
-      if(AppAuth.isAuthenticated()){window.location.href='admin.html';return}
-      document.getElementById('loginForm').addEventListener('submit',e=>{
+    document.addEventListener('DOMContentLoaded', () => {
+      if (AppAuth.isAuthenticated()) { window.location.href = 'admin.html'; return }
+      document.getElementById('loginForm').addEventListener('submit', e => {
         e.preventDefault();
-        const user=document.getElementById('loginUser').value.trim();
-        const pass=document.getElementById('loginPass').value;
-        if(AppAuth.login(user,pass)){window.location.href='admin.html'}
-        else{document.getElementById('loginError').style.display='block'}
+        const user = document.getElementById('loginUser').value.trim();
+        const pass = document.getElementById('loginPass').value;
+        if (AppAuth.login(user, pass)) { window.location.href = 'admin.html' }
+        else { document.getElementById('loginError').style.display = 'block' }
       });
     });
   </script>
 </body>
+
 </html>

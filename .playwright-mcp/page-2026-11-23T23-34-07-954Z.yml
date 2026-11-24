@@ -1,0 +1,12 @@
+- generic [ref=e3]:
+  - img "Your Safe Place" [ref=e4]
+  - heading "Panel de Control" [level=1] [ref=e5]
+  - paragraph [ref=e6]: Your Safe Place · Acceso Privado
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - text: Usuario
+      - textbox [ref=e9]
+    - generic [ref=e10]:
+      - text: Contraseña
+      - textbox [ref=e11]
+    - button "Iniciar Sesión" [ref=e12] [cursor=pointer]

@@ -1,0 +1,112 @@
+- generic [active] [ref=f3e1]:
+  - navigation [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - generic [ref=f3e4]:
+        - img "Your Safe Place" [ref=f3e5]
+        - generic [ref=f3e6]: Your Safe Place
+      - generic [ref=f3e7]:
+        - generic [ref=f3e8]: ¡Buenas noches, Psicóloga Fátima!
+        - button "🚪 Cerrar Sesión" [ref=f3e9] [cursor=pointer]
+  - generic [ref=f3e10]:
+    - generic [ref=f3e11]:
+      - heading "¡Buenas noches, Psicóloga Fátima!" [level=1] [ref=f3e12]
+      - paragraph [ref=f3e13]: Bienvenida a tu panel de control. Aquí puedes ver y gestionar todas las sesiones solicitadas por tus pacientes.
+    - generic [ref=f3e14]:
+      - generic [ref=f3e15]:
+        - generic [ref=f3e16]: 📋
+        - generic [ref=f3e17]: "2"
+        - generic [ref=f3e18]: Total Solicitudes
+      - generic [ref=f3e19]:
+        - generic [ref=f3e20]: ⏳
+        - generic [ref=f3e21]: "1"
+        - generic [ref=f3e22]: Pendientes
+      - generic [ref=f3e23]:
+        - generic [ref=f3e24]: ✅
+        - generic [ref=f3e25]: "1"
+        - generic [ref=f3e26]: Confirmadas
+      - generic [ref=f3e27]:
+        - generic [ref=f3e28]: 💰
+        - generic [ref=f3e29]: S/. 500.00
+        - generic [ref=f3e30]: Recaudación Estimada
+    - generic [ref=f3e31]:
+      - heading "📅 Gestionar Días No Laborables" [level=3] [ref=f3e32]
+      - paragraph [ref=f3e33]: Bloquea fechas específicas en las que no atenderás. Los pacientes no podrán agendar en estos días.
+      - generic [ref=f3e34]:
+        - generic [ref=f3e35]:
+          - generic [ref=f3e36]: Fecha a bloquear
+          - textbox [ref=f3e37]
+        - button "🚫 Bloquear Día" [ref=f3e38] [cursor=pointer]
+      - generic [ref=f3e40]:
+        - text: 🚫 2026-11-30
+        - button "×" [ref=f3e41] [cursor=pointer]
+    - generic [ref=f3e42]:
+      - generic [ref=f3e43]:
+        - heading "📋 Solicitudes de Citas" [level=3] [ref=f3e44]
+        - combobox [ref=f3e45]:
+          - option "Todos" [selected]
+          - option "Pendientes"
+          - option "Confirmados"
+          - option "Rechazados"
+      - table [ref=f3e47]:
+        - rowgroup [ref=f3e48]:
+          - row [ref=f3e49]:
+            - columnheader "Código" [ref=f3e50]
+            - columnheader "Paciente" [ref=f3e51]
+            - columnheader "Servicio" [ref=f3e52]
+            - columnheader "Fecha(s)" [ref=f3e53]
+            - columnheader "Modalidad" [ref=f3e54]
+            - columnheader "Monto" [ref=f3e55]
+            - columnheader "Voucher" [ref=f3e56]
+            - columnheader "Estado" [ref=f3e57]
+            - columnheader "Acciones" [ref=f3e58]
+        - rowgroup [ref=f3e59]:
+          - row [ref=f3e60]:
+            - cell [ref=f3e61]:
+              - strong [ref=f3e62]: "#YSP-8252"
+              - text: 18:45
+            - cell [ref=f3e63]:
+              - strong [ref=f3e64]: Rodrigo Alva Delgado
+              - text: 912345678 · rodrigo.alva@gmail.com
+            - cell "Terapia Individual" [ref=f3e65]
+            - cell [ref=f3e66]:
+              - text: Martes 24 de Noviembre ·
+              - code [ref=f3e67]: 11:00 AM
+            - cell "Presencial (Lima)" [ref=f3e68]
+            - cell [ref=f3e69]:
+              - strong [ref=f3e70]: S/. 150.00
+            - cell [ref=f3e71]:
+              - img "Comprobante" [ref=f3e72] [cursor=pointer]
+            - cell "⏳ Pendiente" [ref=f3e73]
+            - cell [ref=f3e75]:
+              - generic [ref=f3e76]:
+                - button "✓ Confirmar" [ref=f3e77] [cursor=pointer]
+                - button "✗ Rechazar" [ref=f3e78] [cursor=pointer]
+          - row [ref=f3e79]:
+            - cell [ref=f3e80]:
+              - strong [ref=f3e81]: "#YSP-5312"
+              - text: 18:03
+            - cell [ref=f3e82]:
+              - strong [ref=f3e83]: Valeria Mendoza Torres
+              - text: 987654321 · valeria.mendoza@gmail.com
+            - cell "Pack 4 Sesiones Individuales" [ref=f3e84]
+            - cell [ref=f3e85]:
+              - strong [ref=f3e86]: "S1:"
+              - text: Martes 24 de Noviembre ·
+              - code [ref=f3e87]: 10:00 AM
+              - strong [ref=f3e88]: "S2:"
+              - text: Miércoles 25 de Noviembre ·
+              - code [ref=f3e89]: 11:00 AM
+              - strong [ref=f3e90]: "S3:"
+              - text: Jueves 26 de Noviembre ·
+              - code [ref=f3e91]: 12:00 PM
+              - strong [ref=f3e92]: "S4:"
+              - text: Viernes 27 de Noviembre ·
+              - code [ref=f3e93]: 03:00 PM
+            - cell "Presencial" [ref=f3e94]
+            - cell [ref=f3e95]:
+              - strong [ref=f3e96]: S/. 500.00
+            - cell [ref=f3e97]:
+              - img "Comprobante" [ref=f3e98] [cursor=pointer]
+            - cell "✅ Confirmada" [ref=f3e99]
+            - cell [ref=f3e101]:
+              - button "🔓 Liberar Horario" [ref=f3e102] [cursor=pointer]
