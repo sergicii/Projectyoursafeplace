@@ -223,11 +223,22 @@ const I18N = {
 const AppAuth = {
   _sessionKey: 'ysp_admin_auth_session',
   _timeoutMs: 30 * 60 * 1000,
+  _uHash: '4b5dbb5a18946da10c9587fa467e52e9d2bf5ffdd049acfc0b3055bf9be36641',
+  _pHash: '741951eb5c89e1990dedf516d51bd2c4ff8262bbe8f78c1ae9983776a787503b',
 
-  login(user, pass) {
-    if (user === 'fatima.escudero' && pass === 'YSP2026Fatima!') {
+  async _digest(str) {
+    const buf = new TextEncoder().encode(str);
+    const hash = await crypto.subtle.digest('SHA-256', buf);
+    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+  },
+
+  async login(user, pass) {
+    if (!user || !pass) return false;
+    const u = await this._digest(user.trim());
+    const p = await this._digest(pass);
+    if (u === this._uHash && p === this._pHash) {
       const token = 'ysp_jwt_' + Math.random().toString(36).substring(2) + Date.now().toString(36);
-      const session = { token, user, ts: Date.now() };
+      const session = { token, user: user.trim(), ts: Date.now() };
       sessionStorage.setItem(this._sessionKey, JSON.stringify(session));
       return true;
     }

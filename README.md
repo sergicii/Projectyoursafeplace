@@ -38,4 +38,4 @@ Projectyoursafeplace/
 
 - **Ruta**: `/login.html` (o `/admin.html` con guard activo)
 - **Usuario**: `fatima.escudero`
-- **Contraseña**: `YSP2026Fatima!`
+- **Contraseña**: *(Protegida con hash criptográfico SHA-256 en cliente; la contraseña en texto plano no está expuesta en el repositorio)*

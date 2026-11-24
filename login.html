@@ -34,12 +34,16 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (AppAuth.isAuthenticated()) { window.location.href = 'admin.html'; return }
-      document.getElementById('loginForm').addEventListener('submit', e => {
+      document.getElementById('loginForm').addEventListener('submit', async e => {
         e.preventDefault();
         const user = document.getElementById('loginUser').value.trim();
         const pass = document.getElementById('loginPass').value;
-        if (AppAuth.login(user, pass)) { window.location.href = 'admin.html' }
-        else { document.getElementById('loginError').style.display = 'block' }
+        const ok = await AppAuth.login(user, pass);
+        if (ok) {
+          window.location.href = 'admin.html';
+        } else {
+          document.getElementById('loginError').style.display = 'block';
+        }
       });
     });
   </script>
