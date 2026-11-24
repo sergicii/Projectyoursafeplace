@@ -210,6 +210,10 @@ const I18N = {
     updateInvestmentCard();
     renderCalendar();
     renderTimeSlots();
+
+    document.querySelectorAll('.lang-toggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
   }
 };
 
@@ -518,6 +522,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('ysp-data-change', () => {
     renderCalendar();
     renderTimeSlots();
+
+    document.querySelectorAll('.lang-toggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
   });
 });
 

@@ -58,13 +58,14 @@ ul{list-style:none}
 .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav-brand img{width:36px;height:36px;object-fit:contain;border-radius:6px;background:#fff;padding:2px}
 .nav-brand span{font-family:var(--font-heading);font-size:18px;font-weight:600;color:var(--accent-deep)}
-.nav-links{display:flex;align-items:center;gap:20px}
+.nav-links{display:flex;align-items:center;gap:20px;margin-left:auto;margin-right:16px}
 .nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s;position:relative}
 .nav-links a:hover{color:var(--accent)}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);transition:width .2s var(--ease-out)}
 .nav-links a:hover::after{width:100%}
-.lang-toggle{display:flex;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.lang-toggle button{padding:5px 10px;font-size:12px;font-weight:600;border:none;background:transparent;color:var(--muted);transition:background .2s,color .2s}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.lang-toggle{display:flex;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.lang-toggle button{padding:5px 10px;font-size:12px;font-weight:600;border:none;background:transparent;color:var(--muted);cursor:pointer;transition:background .2s,color .2s}
 .lang-toggle button.active{background:var(--accent);color:#fff}
 .nav-wa{display:inline-flex;align-items:center;gap:6px;background:#25D366;color:#fff!important;padding:7px 14px;border-radius:var(--radius);font-size:13px;font-weight:600;transition:transform 160ms var(--ease-out),background .2s}
 .nav-wa:hover{background:#1DA851;color:#fff!important}
@@ -333,9 +334,13 @@ ul{list-style:none}
 }
 
 @media(max-width:767px){
+  .nav-inner{padding:0 16px!important}
+  .nav-brand span{font-size:16px!important;white-space:nowrap!important}
   .nav-links{display:none}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:20px;box-shadow:var(--shadow);z-index:99}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:20px;box-shadow:var(--shadow);z-index:99;gap:16px;margin:0}
+  .nav-actions{display:flex;align-items:center;gap:10px}
   .nav-hamburger{display:flex}
+  .lang-toggle button{padding:4px 9px;font-size:11px}
   .presentation-text h1{font-size:30px!important}
   .booking-main-card{padding:20px 16px}
   .modality-grid{grid-template-columns:1fr}

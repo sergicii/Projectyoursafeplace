@@ -1,0 +1,237 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Your Safe Place Your Safe Place" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+        - img "Your Safe Place" [ref=e5]
+        - generic [ref=e6]: Your Safe Place
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - button "ES" [ref=e9] [cursor=pointer]
+          - button "EN" [ref=e10] [cursor=pointer]
+        - button "Menú" [ref=e11] [cursor=pointer]
+  - generic [ref=e17]:
+    - generic [ref=e18]:
+      - paragraph [ref=e19]: Psicóloga Clínica · Lima, Perú
+      - heading "Tu espacio seguro para sanar" [level=1] [ref=e20]
+      - paragraph [ref=e21]: Psic. Fátima Escudero · Especialista en TCC, Terapia de Pareja y Familia
+      - paragraph [ref=e22]: Te acompaño en un proceso terapéutico basado en evidencia, con calidez humana y sin juicios. Consultorio privado en el límite de San Isidro, San Borja y La Victoria, Lima, o modalidad virtual por videollamada para todo el Perú y el extranjero.
+      - generic [ref=e23]:
+        - generic [ref=e24]: Trastorno Límite de la Personalidad (TLP)
+        - generic [ref=e25]: Ansiedad · Depresión · Bipolaridad
+        - generic [ref=e26]: Desregulación y dependencia emocional
+        - generic [ref=e27]: Trauma psicológico y estrés postraumático
+        - generic [ref=e28]: Secuelas de abuso psicológico y trauma relacional
+        - generic [ref=e29]: Dificultades de pareja y familiares
+        - generic [ref=e30]: Conductas adictivas y límites afectivos
+      - generic [ref=e31]:
+        - text: 💡
+        - strong [ref=e32]: "Servicios disponibles:"
+        - text: Sesiones de 60 minutos individuales (S/. 150) y de pareja (S/. 180), además de packs terapéuticos individuales con tarifa reducida.
+      - link "📅 Agendar mi Cita" [ref=e33] [cursor=pointer]:
+        - /url: "#agendamiento"
+    - img "Psicóloga Fátima Escudero" [ref=e36]
+  - generic [ref=e39]:
+    - generic [ref=e40]:
+      - generic [ref=e41]: "1"
+      - heading "Modalidad y Selección de Terapia" [level=2] [ref=e42]
+    - generic [ref=e43]:
+      - generic [ref=e44] [cursor=pointer]:
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - text: 🏢
+            - generic [ref=e48]: Presencial en Consultorio
+          - generic [ref=e49]: Lima
+        - paragraph [ref=e50]: Consultorio privado en el Límite San Isidro, San Borja & La Victoria.
+      - generic [ref=e51] [cursor=pointer]:
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - text: 💻
+            - generic [ref=e55]: Virtual por Videollamada
+          - generic [ref=e56]: Meet / Zoom
+        - paragraph [ref=e57]: Sesión online para Lima, provincias de Perú y pacientes en el extranjero.
+    - generic [ref=e58]: "Selecciona la Terapia o Paquete:"
+    - generic [ref=e59]:
+      - generic [ref=e60] [cursor=pointer]:
+        - generic [ref=e61]:
+          - heading "Terapia Individual" [level=4] [ref=e63]
+          - generic [ref=e64]: S/. 150.00
+        - generic [ref=e65]: Sesión de 60 minutos
+      - generic [ref=e66] [cursor=pointer]:
+        - generic [ref=e67]:
+          - heading "Terapia de Pareja" [level=4] [ref=e69]
+          - generic [ref=e70]: S/. 180.00
+        - generic [ref=e71]: Sesión de 60 minutos
+      - generic [ref=e72] [cursor=pointer]:
+        - generic [ref=e73]:
+          - heading "Pack 4 Sesiones Individuales" [level=4] [ref=e75]
+          - generic [ref=e76]: S/. 500.00
+        - generic [ref=e77]: 4 sesiones de 60 min (Ahorro S/. 100)
+    - generic [ref=e79]:
+      - generic [ref=e80]: "2"
+      - heading "Fecha y Horario de la Sesión" [level=2] [ref=e81]
+      - generic [ref=e82]:
+        - generic [ref=e83]: Disponible
+        - generic [ref=e86]: Ocupado
+        - generic [ref=e89]: Cerrado
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e94]:
+          - button "Mes anterior" [ref=e95] [cursor=pointer]: ‹
+          - heading "Noviembre 2026" [level=3] [ref=e96]
+          - button "Mes siguiente" [ref=e97] [cursor=pointer]: ›
+        - generic [ref=e98]:
+          - generic [ref=e99]: Lun
+          - generic [ref=e100]: Mar
+          - generic [ref=e101]: Mié
+          - generic [ref=e102]: Jue
+          - generic [ref=e103]: Vie
+          - generic [ref=e104]: Sáb
+          - generic [ref=e105]: Dom
+          - generic [ref=e112]:
+            - generic [ref=e113]: "1"
+            - generic [ref=e114]: Cerrado
+          - generic [ref=e115]: "2"
+          - generic [ref=e117]: "3"
+          - generic [ref=e119]: "4"
+          - generic [ref=e121]: "5"
+          - generic [ref=e123]: "6"
+          - generic [ref=e125]:
+            - generic [ref=e126]: "7"
+            - generic [ref=e127]: Cerrado
+          - generic [ref=e128]:
+            - generic [ref=e129]: "8"
+            - generic [ref=e130]: Cerrado
+          - generic [ref=e131]: "9"
+          - generic [ref=e133]: "10"
+          - generic [ref=e135]: "11"
+          - generic [ref=e137]: "12"
+          - generic [ref=e139]: "13"
+          - generic [ref=e141]:
+            - generic [ref=e142]: "14"
+            - generic [ref=e143]: Cerrado
+          - generic [ref=e144]:
+            - generic [ref=e145]: "15"
+            - generic [ref=e146]: Cerrado
+          - generic [ref=e147]: "16"
+          - generic [ref=e149]: "17"
+          - generic [ref=e151]: "18"
+          - generic [ref=e153]: "19"
+          - generic [ref=e155]: "20"
+          - generic [ref=e157]:
+            - generic [ref=e158]: "21"
+            - generic [ref=e159]: Cerrado
+          - generic [ref=e160]:
+            - generic [ref=e161]: "22"
+            - generic [ref=e162]: Cerrado
+          - generic [ref=e163]: "23"
+          - generic [ref=e165] [cursor=pointer]:
+            - generic [ref=e166]: "24"
+            - generic [ref=e167]: Hoy
+          - generic [ref=e168] [cursor=pointer]: "25"
+          - generic [ref=e170] [cursor=pointer]: "26"
+          - generic [ref=e172] [cursor=pointer]: "27"
+          - generic [ref=e174]:
+            - generic [ref=e175]: "28"
+            - generic [ref=e176]: Cerrado
+          - generic [ref=e177]:
+            - generic [ref=e178]: "29"
+            - generic [ref=e179]: Cerrado
+          - generic [ref=e180]:
+            - generic [ref=e181]: "30"
+            - generic [ref=e182]: Cerrado
+        - paragraph [ref=e183]: "* Atención de Lunes a Viernes. Fines de semana y fechas pasadas no están disponibles."
+      - generic [ref=e184]:
+        - generic [ref=e185]:
+          - generic [ref=e186]: HORARIOS DISPONIBLES (60 MIN)
+          - generic [ref=e187]: 10 libres
+        - generic [ref=e188]: Selecciona una fecha en el calendario
+        - generic [ref=e189]: Haz clic en un día del calendario a la izquierda para ver los horarios disponibles.
+        - generic [ref=e191]:
+          - text: "Horario seleccionado:"
+          - strong [ref=e192]: —
+    - generic [ref=e194]:
+      - generic [ref=e195]: "3"
+      - heading "Datos de Contacto del Paciente" [level=2] [ref=e196]
+    - generic [ref=e198]:
+      - generic [ref=e199]:
+        - generic [ref=e200]: Nombres y Apellidos *
+        - textbox "Nombres y Apellidos *" [ref=e201]:
+          - /placeholder: "Ej: Mariana Ramos Salazar"
+        - generic [ref=e202]: Solo letras y espacios (sin números ni caracteres especiales)
+      - generic [ref=e203]:
+        - generic [ref=e204]: DNI / Documento de Identidad *
+        - textbox "DNI / Documento de Identidad *" [ref=e205]:
+          - /placeholder: "Ej: 72849102"
+        - generic [ref=e206]: Solo números (máximo 10 dígitos)
+      - generic [ref=e207]:
+        - generic [ref=e208]: WhatsApp de Contacto *
+        - textbox "WhatsApp de Contacto *" [ref=e209]:
+          - /placeholder: "Ej: 924123456"
+        - generic [ref=e210]: Solo números
+      - generic [ref=e211]:
+        - generic [ref=e212]: Correo Electrónico *
+        - textbox "Correo Electrónico *" [ref=e213]:
+          - /placeholder: "Ej: mariana@correo.com"
+        - generic [ref=e214]: Alfanumérico seguro (@ y .)
+      - generic [ref=e215]:
+        - generic [ref=e216]: Motivo de consulta (Breve y confidencial)
+        - textbox "Motivo de consulta (Breve y confidencial)" [ref=e217]:
+          - /placeholder: "Ej: Primera consulta para manejo emocional o terapia de pareja"
+    - generic [ref=e219]:
+      - generic [ref=e220]: "4"
+      - heading "Información de Abono y Confirmación" [level=2] [ref=e221]
+    - generic [ref=e222]:
+      - generic [ref=e223]:
+        - generic [ref=e224]: INVERSIÓN POR SESIÓN TERAPÉUTICA
+        - generic [ref=e225]: S/. 150.00
+        - generic [ref=e226]: Terapia Individual (Sesión de 60 minutos · Psic. Fátima Escudero)
+      - generic [ref=e227]: 🏢 Presencial (Lima) Selecciona fecha y hora
+    - generic [ref=e228]: "💳 Cuentas de pago autorizadas para sesión terapéutica:"
+    - generic [ref=e229]:
+      - generic [ref=e230]:
+        - generic [ref=e231]:
+          - generic [ref=e232]: Yape / Plin
+          - generic [ref=e233]: Móvil
+        - generic [ref=e234]: +51 924 368 333
+        - generic [ref=e235]: "Titular: Fátima Escudero"
+      - generic [ref=e236]:
+        - generic [ref=e237]:
+          - generic [ref=e238]: BCP Soles
+          - generic [ref=e239]: Ahorros
+        - generic [ref=e240]: "19473121367065"
+        - generic [ref=e241]: "CCI: 00219417312136706595"
+      - generic [ref=e242]:
+        - generic [ref=e243]:
+          - generic [ref=e244]: BBVA Soles
+          - generic [ref=e245]: Independencia
+        - generic [ref=e246]: 0011-0814-0237429708
+        - generic [ref=e247]: "CCI: 01181400023742970819"
+    - generic [ref=e248]:
+      - heading "📎 Adjuntar Fotografía o Captura del Pago *" [level=4] [ref=e249]
+      - paragraph [ref=e250]: Sube el comprobante de abono para que Fátima lo verifique y valide tu cita.
+      - generic [ref=e251]:
+        - button "📁 Seleccionar archivo de pago" [ref=e252] [cursor=pointer]:
+          - text: 📁
+          - generic [ref=e253]: Seleccionar archivo de pago
+        - generic [ref=e254]: Sin adjuntar
+    - button "📱 Solicitar Cita & Enviar Comprobante por WhatsApp" [disabled] [ref=e255]:
+      - text: 📱
+      - generic [ref=e256]: Solicitar Cita & Enviar Comprobante por WhatsApp
+    - paragraph [ref=e257]: "* Para habilitar el envío, debes adjuntar primero la foto o captura de tu comprobante de abono arriba. Atención estrictamente confidencial bajo secreto profesional."
+  - contentinfo [ref=e258]:
+    - generic [ref=e259]:
+      - generic [ref=e260]:
+        - generic [ref=e261]:
+          - heading "Your Safe Place" [level=4] [ref=e262]
+          - paragraph [ref=e263]: Consultorio psicológico de la Psic. Fátima Escudero. Atención clínica especializada en Lima, Perú.
+        - generic [ref=e264]:
+          - heading "Contacto" [level=4] [ref=e265]
+          - paragraph [ref=e266]: 📱 +51 924 368 333
+          - paragraph [ref=e267]: 📧 contacto@yoursafeplace.pe
+          - paragraph [ref=e268]: 📍 Lima, Perú · Límite San Isidro, San Borja & La Victoria
+        - generic [ref=e269]:
+          - heading "Horario de Atención" [level=4] [ref=e270]
+          - paragraph [ref=e271]: "Lunes a Viernes: 10:00 AM – 8:00 PM"
+          - paragraph [ref=e272]: "Sábados y Domingos: Cerrado"
+      - paragraph [ref=e274]: © 2026 Your Safe Place · Psic. Fátima Escudero · Todos los derechos reservados
